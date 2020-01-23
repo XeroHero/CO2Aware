@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.co2aware">
 
     <application
@@ -8,10 +9,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        android:fullBackupContent="true" >
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".GreenTipsActivity"
+            android:label="@string/title_activity_green_tips" />
+        <activity
+            android:name=".GreenLeaderBoardActivity"
+            android:label="@string/title_activity_green_leader_board" />
+        <activity
+            android:name=".TransportJourneyPlanner"
+            android:label="@string/title_activity_transport_journey_planner" />
+        <activity
+            android:name=".EmissionSummaryActivity"
+            android:label="@string/title_activity_emission_summary" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
