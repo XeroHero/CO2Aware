@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="tk.xerohero.co2aware.ui.home.HomeFragment"
+        android:name="tk.xerohero.co2aware.ui.greenTips.GreenTipsFragment"
         android:label="@string/title_emission_graph"
         tools:layout="@layout/fragment_dashboard" />
 

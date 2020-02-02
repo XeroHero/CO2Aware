@@ -1,16 +1,20 @@
-package tk.xerohero.co2aware.ui.home;
+package tk.xerohero.co2aware.ui.greenTips;
+
+import android.widget.TextView;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class GreenTipsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    private TextView textView;
+    public GreenTipsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Some green tips to make your life more eco-friendly!");
+
     }
 
     public LiveData<String> getText() {
