@@ -84,8 +84,6 @@ public class PieChartFragment extends Fragment {
         ds1.setValueTextColor(Color.WHITE);
         ds1.setValueTextSize(12f);
 
-        PieData d = new PieData(ds1);
-
-        return d;
+        return new PieData(ds1);
     }
 }

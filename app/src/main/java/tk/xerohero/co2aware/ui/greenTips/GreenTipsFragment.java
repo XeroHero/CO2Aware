@@ -22,8 +22,6 @@ import tk.xerohero.co2aware.R;
 
 public class GreenTipsFragment extends Fragment {
 
-    private GreenTipsViewModel greenTipsViewModel;
-
     @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -34,7 +32,7 @@ public class GreenTipsFragment extends Fragment {
         TextView textView = root.findViewById(R.id.green_tips_text_view);
         TextViewCompat.setAutoSizeTextTypeWithDefaults(textView, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
 
-        textView.setText("Hi hi hi");
+        textView.setText("Hi hi hi jbcdslkbcklbskjbukcvkjxzcvu abvskhfghbvjaflndskujghnbgvkfjsdhvb sbca vhjkscfbgvk dcjkxzb");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             textView.setLineHeight(TextView.AUTO_SIZE_TEXT_TYPE_NONE);
 
