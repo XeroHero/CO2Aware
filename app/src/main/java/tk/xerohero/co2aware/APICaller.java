@@ -17,6 +17,8 @@ import okhttp3.Request.Builder;
 import okhttp3.Response;
 import xdroid.toaster.Toaster;
 
+import static java.lang.Integer.parseInt;
+
 /**
  * Class to call the Spoonacular API, Fetch Results and Build Objects based n the results.
  */
@@ -49,7 +51,7 @@ public class APICaller {
 
     // Gets a single recipe as input -> Fetches all relevant information
     // regarding the recipe and stores it inside the object
-    public void getRecipeInformation(BikeStation bikeStation, OnFetchRecipeDetails callback) {
+    public void getBikeStationInformation(BikeStation bikeStation, OnFetchRecipeDetails callback) {
         int number = bikeStation.getBikeStationNumber();
         new Thread(new Runnable() {
             @Override
@@ -67,18 +69,17 @@ public class APICaller {
                     // If this check didn't pass, there's an issue - it should.
                     if (responseJson.isJsonObject()) {
                         JsonObject element = responseJson.getAsJsonObject();
-//                        recipe.setIsVegan(element.get("vegan").getAsBoolean());
-//                        recipe.setTimeToCook(element.get("readyInMinutes").getAsInt());
-//                        if (!element.get("instructions").isJsonNull()) {
-//                            recipe.setInstructions(element.get("instructions").getAsString());
-//                        } else {
-//                            recipe.setInstructions(
-//                                    "Server does not have instructions for this recipe. Seems quite simple though, "
-//                                            + "doesn't it? Look at the image, the ingredients and do it - just do it!");
-//                        }
-//                        recipe.setServings(element.get("servings").getAsInt());
-//                        recipe.setCheap(element.get("cheap").getAsBoolean());
+                        bikeStation.setBikeStationNumber(element.get("number").getAsInt());
+                        bikeStation.setAddress(element.get("Address").getAsString());
+                        bikeStation.setLocation(new LatLng(element.get("lat").getAsDouble(), element.get("lng").getAsDouble()));
+                        bikeStation.setBikesAvailable(element.get("available").getAsInt());
+
+                        if (bikeStation.getBikesAvailable() == 0){
+                            Log.d("BikeCountZero", "There are no bikes available at this location");
+                        }
                         callback.onSuccess(true);
+
+
                     }else{
                         Log.d("Error", "Had issues parsing bike station info for Bike station  " + bikeStation.getBikeStationNumber());
                     }
@@ -115,7 +116,7 @@ public class APICaller {
                     if (responseJson.isJsonArray()) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                             responseJson.getAsJsonArray().forEach((element) -> {
-                                bikeStations.add(buildRecipe(element.getAsJsonObject()));
+                                bikeStations.add(buildBikeStation(element.getAsJsonObject()));
                             });
                         }
                         callback.onSuccess(bikeStations);
@@ -130,37 +131,19 @@ public class APICaller {
     }
 
 
-    private BikeStation buildRecipe(JsonObject element) {
+    private BikeStation buildBikeStation(JsonObject element) {
         JsonObject returnObject = element.getAsJsonObject();
-        String name = returnObject.get("title").getAsString();
-        Integer id = Integer.parseInt(returnObject.get("id").toString());
+        Integer number = returnObject.get("Number").getAsInt();
+        JsonElement lat = returnObject.get("lat");
+        JsonElement lng = returnObject.get("lng");
+        LatLng coordinates = new LatLng(lat.getAsDouble(), lng.getAsDouble());
         String image = returnObject.get("image").getAsString();
-
-        // Fetch the ingredients that user didn't specify they had.
-        JsonArray missingIngredientsArray = returnObject.get("missedIngredients").getAsJsonArray();
-//        ArrayList<Ingredient> missingIngredients = new ArrayList<>();
-//        for (JsonElement ingredient : missingIngredientsArray) {
-//            missingIngredients.add(
-//                    new Ingredient(ingredient.getAsJsonObject().get("name").getAsString(),
-//                            ingredient.getAsJsonObject().get("aisle").getAsString(),
-//                            ingredient.getAsJsonObject().get("image").getAsString()));
-//        }
-//
-//        // Fetch the ingredients that user did specify and is used in the recipe.
-//        JsonArray usedIngredientsArray = returnObject.get("usedIngredients").getAsJsonArray();
-//        ArrayList<Ingredient> usedIngredients = new ArrayList<>();
-//        for (JsonElement ingredient : usedIngredientsArray) {
-//            usedIngredients.add(
-//                    new Ingredient(ingredient.getAsJsonObject().get("name").getAsString(),
-//                            ingredient.getAsJsonObject().get("aisle").getAsString(),
-//                            ingredient.getAsJsonObject().get("image").getAsString()));
-//        }
-
+        Integer bikesAvailable = returnObject.get("Bikes_available").getAsInt();
+        Integer parkingPlacesAvailable = returnObject.get("parking_places").getAsInt();
         String addressDisplay = "";
 
         LatLng latLngLocation = null;
-        int bikesAvailable = 0, parkingPlacesAvailable=0;
-        BikeStation bikeStation = new BikeStation(id, addressDisplay, latLngLocation, bikesAvailable, parkingPlacesAvailable);
+        BikeStation bikeStation = new BikeStation(number, addressDisplay, latLngLocation, bikesAvailable, parkingPlacesAvailable);
 //        recipe.setMissedIngredients(missingIngredients);
 //        recipe.setUsedIngredients(usedIngredients);
 //        return recipe;

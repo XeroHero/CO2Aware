@@ -3,6 +3,22 @@ package tk.xerohero.co2aware;
 import com.google.android.gms.maps.model.LatLng;
 
 class BikeStation {
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setLocation(LatLng location) {
+        this.location = location;
+    }
+
+    public void setBikesAvailable(int bikesAvailable) {
+        this.bikesAvailable = bikesAvailable;
+    }
+
     private int number;
     private String address;
     private LatLng location;
