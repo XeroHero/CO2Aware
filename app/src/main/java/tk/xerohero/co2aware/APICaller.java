@@ -136,19 +136,19 @@ public class APICaller {
         Integer number = returnObject.get("Number").getAsInt();
         JsonElement lat = returnObject.get("lat");
         JsonElement lng = returnObject.get("lng");
-        LatLng coordinates = new LatLng(lat.getAsDouble(), lng.getAsDouble());
-        String image = returnObject.get("image").getAsString();
-        Integer bikesAvailable = returnObject.get("Bikes_available").getAsInt();
-        Integer parkingPlacesAvailable = returnObject.get("parking_places").getAsInt();
+        LatLng latLngLocation = new LatLng(lat.getAsDouble(), lng.getAsDouble());
+        int bikesAvailable = returnObject.get("Bikes_available").getAsInt();
+        int parkingPlacesAvailable = returnObject.get("parking_places").getAsInt();
         String addressDisplay = "";
 
-        LatLng latLngLocation = null;
-        BikeStation bikeStation = new BikeStation(number, addressDisplay, latLngLocation, bikesAvailable, parkingPlacesAvailable);
-//        recipe.setMissedIngredients(missingIngredients);
+
+        //        recipe.setMissedIngredients(missingIngredients);
 //        recipe.setUsedIngredients(usedIngredients);
 //        return recipe;
-    return bikeStation;
+    return new BikeStation(number, addressDisplay, latLngLocation, bikesAvailable, parkingPlacesAvailable);
     }
 
 
 }
+
+//REST Server pyhton
