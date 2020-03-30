@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class BikeListView extends AppCompatActivity {
 
     RecyclerViewAdapter rvaAdapter;
-    ArrayList<BikeStation> recipeHeaders;
+    ArrayList<BikeStation> bikeStationHeaders;
 
     // Setup everything as required so that search aresults can be shown.
     @Override
@@ -28,7 +28,7 @@ public class BikeListView extends AppCompatActivity {
 
         Bundle message = intent.getExtras();
 
-        recipeHeaders = (ArrayList<BikeStation>) intent.getSerializableExtra("recipeHeaders");
+        bikeStationHeaders = (ArrayList<BikeStation>) intent.getSerializableExtra("bikeStationHeaders");
 
         String recipeListHeading = getIntent().getStringExtra("RecipeTypes");
         TextView header = findViewById(R.id.textView);
@@ -41,7 +41,7 @@ public class BikeListView extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        rvaAdapter = new RecyclerViewAdapter(this, recipeHeaders);
+        rvaAdapter = new RecyclerViewAdapter(this, bikeStationHeaders);
         recyclerView.setAdapter(rvaAdapter);
 
 //        rvaAdapter.setClickListener(this);

@@ -1,4 +1,5 @@
 package tk.xerohero.co2aware.ui.PieChartFragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -9,6 +10,7 @@ import android.text.style.RelativeSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -19,6 +21,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+import tk.xerohero.co2aware.BikeListView;
 import tk.xerohero.co2aware.R;
 
 
