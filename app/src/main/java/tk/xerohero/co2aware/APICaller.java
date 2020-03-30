@@ -6,7 +6,6 @@ import android.os.Build;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -43,7 +42,7 @@ public class APICaller {
     }
 
     // Same as above.
-    public interface OnFetchRecipeDetails {
+    public interface OnFetchBikeStationDetails {
 
         void onSuccess(Boolean result);
     }
@@ -51,7 +50,7 @@ public class APICaller {
 
     // Gets a single recipe as input -> Fetches all relevant information
     // regarding the recipe and stores it inside the object
-    public void getBikeStationInformation(BikeStation bikeStation, OnFetchRecipeDetails callback) {
+    public void getBikeStationInformation(BikeStation bikeStation, OnFetchBikeStationDetails callback) {
         int number = bikeStation.getBikeStationNumber();
         new Thread(new Runnable() {
             @Override
@@ -70,7 +69,8 @@ public class APICaller {
                     if (responseJson.isJsonObject()) {
                         JsonObject element = responseJson.getAsJsonObject();
                         bikeStation.setBikeStationNumber(element.get("number").getAsInt());
-                        bikeStation.setAddress(element.get("Address").getAsString());
+                        bikeStation.setAddress(element.get("address").getAsString());
+                      //nested JSON is "position" node TODO: Check that this actually works
                         bikeStation.setLocation(new LatLng(element.get("lat").getAsDouble(), element.get("lng").getAsDouble()));
                         bikeStation.setBikesAvailable(element.get("available").getAsInt());
 
