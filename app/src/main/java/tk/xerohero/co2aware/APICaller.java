@@ -10,6 +10,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.util.ArrayList;
+import java.util.List;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Request.Builder;
@@ -36,7 +38,7 @@ public class APICaller {
 
     // These two are used to make callbacks so that that the methods calling this class and its
     // fetchers are then able to work on the results without constantly polling to see if the result changed.
-    public interface OnReturnRecipeList {
+    public interface OnReturnBikeStationList {
 
         void onSuccess(ArrayList<BikeStation> value);
     }
@@ -70,8 +72,9 @@ public class APICaller {
                         JsonObject element = responseJson.getAsJsonObject();
                         bikeStation.setBikeStationNumber(element.get("number").getAsInt());
                         bikeStation.setAddress(element.get("address").getAsString());
-                      //nested JSON is "position" node TODO: Check that this actually works
-                        bikeStation.setLocation(new LatLng(element.get("lat").getAsDouble(), element.get("lng").getAsDouble()));
+                        //nested JSON is "position" node TODO: Check that this actually works
+                        bikeStation.setLatitude(element.get("position/lat").getAsString());
+                        bikeStation.setLongitude(element.get("position/lng").getAsString());
                         bikeStation.setBikesAvailable(element.get("available").getAsInt());
 
                         if (bikeStation.getBikesAvailable() == 0){
@@ -96,8 +99,9 @@ public class APICaller {
      * @param callback
      */
 
-    public void fetchRecipes(LatLng userLocation, OnReturnRecipeList callback) {
-        final ArrayList<BikeStation> bikeStations = new ArrayList<>();
+    public static final List<BikeStation> bikeStations = new ArrayList<>();
+
+    public void fetchBikeStationData(LatLng userLocation, OnReturnBikeStationList callback) {
 
         new Thread(new Runnable() {
             @Override
@@ -108,7 +112,6 @@ public class APICaller {
                         .url("https://api.jcdecaux.com/vls/v1/stations?contract=dublin&apiKey=" + API_KEY)
                         .get()
                         .build();
-
                 try {
                     Response response = client.newCall(request).execute();
                     JsonElement responseJson = new JsonParser().parse(response.body().string());
@@ -119,13 +122,12 @@ public class APICaller {
                                 bikeStations.add(buildBikeStation(element.getAsJsonObject()));
                             });
                         }
-                        callback.onSuccess(bikeStations);
+                        callback.onSuccess((ArrayList<BikeStation>) bikeStations);
                     }
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     Toaster.toast("There has been an error fetching from the API");
                 }
-
             }
         }).start();
     }
@@ -133,22 +135,37 @@ public class APICaller {
 
     private BikeStation buildBikeStation(JsonObject element) {
         JsonObject returnObject = element.getAsJsonObject();
+        BikeStation b;
+        //are there bikes
+        int bikesAvailable = returnObject.get("Bikes_available").getAsInt();
+        int parkingPlacesAvailable = 0;
+
+        Boolean pickupPossible = null;
+        if (bikesAvailable > 0) {
+            pickupPossible = true;
+        }
+
+        parkingPlacesAvailable = returnObject.get("parking_places").getAsInt();
+
+        Boolean dropOffPossible = null;
+        if (parkingPlacesAvailable > 0) {
+            dropOffPossible = true;
+        }
+
         Integer number = returnObject.get("Number").getAsInt();
         JsonElement lat = returnObject.get("lat");
         JsonElement lng = returnObject.get("lng");
-        LatLng latLngLocation = new LatLng(lat.getAsDouble(), lng.getAsDouble());
-        int bikesAvailable = returnObject.get("Bikes_available").getAsInt();
-        int parkingPlacesAvailable = returnObject.get("parking_places").getAsInt();
+//        LatLng latLngLocation = new LatLng(lat.getAsDouble(), lng.getAsDouble());
+
         String addressDisplay = "";
 
+        if (dropOffPossible || pickupPossible) {
+            b = new BikeStation(number, addressDisplay, lat.toString(), lng.toString(), bikesAvailable, parkingPlacesAvailable, dropOffPossible, pickupPossible);
+        }
 
-        //        recipe.setMissedIngredients(missingIngredients);
-//        recipe.setUsedIngredients(usedIngredients);
-//        return recipe;
-    return new BikeStation(number, addressDisplay, latLngLocation, bikesAvailable, parkingPlacesAvailable);
+        else{ //return null object if there are no bikes available at the chosen location
+            b = new BikeStation(null, null, null, null, null,null, dropOffPossible, pickupPossible);
+        }
+        return b;
     }
-
-
 }
-
-//REST Server pyhton

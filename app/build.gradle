@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "tk.xerohero.co2aware"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -39,7 +39,7 @@ dependencies {
     //Required for Pie Chart on emission summary screen
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.koushikdutta.ion:ion:3.0.0'
     implementation 'com.shamanland:xdroid-toaster:0.0.5'
     implementation fileTree(dir: 'libs', include: ['*.jar'])

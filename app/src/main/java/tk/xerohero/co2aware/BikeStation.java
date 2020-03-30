@@ -1,62 +1,104 @@
 package tk.xerohero.co2aware;
 
-import com.google.android.gms.maps.model.LatLng;
-
 class BikeStation {
-    public void setNumber(int number) {
+    private int parkingAvailable;
+    private int number;
+    private String address;
+    private int bikesAvailable;
+
+    //Safer than using LatLng type
+    private String latitude;
+    private String longitude;
+    private Boolean dropOffPossible;
+    private Boolean pickupPossible;
+
+    public Boolean isDropOffPossible() {
+        return dropOffPossible;
+    }
+
+    public void setDropOffPossible(Boolean dropOffPossible) {
+        this.dropOffPossible = dropOffPossible;
+    }
+
+    public Boolean isPickupPossible() {
+        return pickupPossible;
+    }
+
+    public void setPickupPossible(Boolean pickupPossible) {
+        this.pickupPossible = pickupPossible;
+    }
+
+    String getLatitude() {
+        return latitude;
+    }
+
+    void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    String getLongitude() {
+        return longitude;
+    }
+
+    void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    BikeStation(Integer id, String addressDisplay, String latitude, String longitude, Integer bikesAvailable, Integer parkingPlacesAvailable, Boolean dropOffPossible, Boolean pickupPossible) {
+        this.number = id;
+        this.address = addressDisplay;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.bikesAvailable = bikesAvailable;
+        this.parkingAvailable = parkingPlacesAvailable;
+        this.dropOffPossible = dropOffPossible;
+        this.pickupPossible = pickupPossible;
+    }
+
+    int getNumber() {
+        return number;
+    }
+
+    void setNumber(int number) {
         this.number = number;
     }
 
-    public void setAddress(String address) {
+    void setParkingAvailable(int parkingAvailable) {
+        this.parkingAvailable = parkingAvailable;
+    }
+
+    int getParkingAvailable() {
+        return parkingAvailable;
+    }
+
+    void setAddress(String address) {
         this.address = address;
     }
 
-    public void setLocation(LatLng location) {
-        this.location = location;
-    }
-
-    public void setBikesAvailable(int bikesAvailable) {
-        this.bikesAvailable = bikesAvailable;
-    }
-
-    private int number;
-    private String address;
-    private LatLng location;
-    private int bikesAvailable;
-
-    public String getAddress() {
+    String getAddress() {
         return address;
     }
 
-    public LatLng getLocation() {
-        return location;
+
+    void setBikesAvailable(int bikesAvailable) {
+        this.bikesAvailable = bikesAvailable;
     }
 
-    public int getBikesAvailable() {
+
+
+    int getBikesAvailable() {
         return bikesAvailable;
     }
 
-    public int getParkingAvailable() {
-        return parkingAvailable;
-    }
 
     int getBikeStationNumber() {
         return number;
     }
 
-    public void setBikeStationNumber(int number) {
+    void setBikeStationNumber(int number) {
         this.number = number;
     }
 
-    private final int parkingAvailable;
-
-    public BikeStation(Integer id, String addressDisplay, LatLng latLngLocation, int bikesAvailable, int parkingPlacesAvailable) {
-        this.number = id;
-        this.address = addressDisplay;
-        this.location = latLngLocation;
-        this.bikesAvailable = bikesAvailable;
-        this.parkingAvailable = parkingPlacesAvailable;
-    }
 
 
 }
