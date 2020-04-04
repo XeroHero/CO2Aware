@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CO2 Aware.iml" filepath="$PROJECT_DIR$/CO2 Aware.iml" group="CO2 Aware" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CO2 Aware/app" />
+      <module fileurl="file://$PROJECT_DIR$/Android-Volve.iml" filepath="$PROJECT_DIR$/Android-Volve.iml" group="Android-Volve" />
+      <module fileurl="file://$PROJECT_DIR$/volve/volve.iml" filepath="$PROJECT_DIR$/volve/volve.iml" group="Android-Volve/volve" />
     </modules>
   </component>
 </project>

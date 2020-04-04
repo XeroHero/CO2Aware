@@ -5,19 +5,18 @@
       <config />
     </shared>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c6b607-2799-4ec3-bed4-f753a3761462" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tk/xerohero/co2aware/APICaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tk/xerohero/co2aware/APICaller.java" afterDir="false" />
+    <list default="true" id="9dbf3296-9d2a-4378-a2b5-261fd90b8317" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/EventManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/MainOpeningScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/MainOpeningScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/ClubTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/ClubTabFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/EventsTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/EventsTabFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/InsideSocFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/InsideSocFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/SUTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/SUTabFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/SocTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/SocTabFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +24,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_29_x86" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_27" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -38,54 +37,16 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>max</find>
-      <find>seekBarX</find>
-      <find>selecte</find>
-      <find>gasNumMax</find>
-      <find>parties</find>
-      <find>fetchREc</find>
-      <find>buildRecipe</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>gasNumMaxSlider</replace>
-      <replace>gases</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1YOp9pRyoxdhu3rAzkHsOnC0x5J" />
+  <component name="ProjectId" id="1a4Up52Z4c3WHTUJiXluOK89O96" />
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../COMP41690-Android-Development" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CO2Aware/volve_CO2Aware/volve" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="tk.xerohero.co2aware" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CO2Aware\app\src\main\res\drawable-v24" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="D:\CO2Aware\app\src\main\res\layout" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -107,8 +68,8 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="app" />
+    <configuration name="volve" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="volve" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -164,11 +125,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f1c6b607-2799-4ec3-bed4-f753a3761462" name="Default Changelist" comment="" />
-      <created>1580375728481</created>
+      <changelist id="9dbf3296-9d2a-4378-a2b5-261fd90b8317" name="Default Changelist" comment="" />
+      <created>1585994538433</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1580375728481</updated>
+      <updated>1585994538433</updated>
     </task>
     <servers />
   </component>
@@ -177,23 +138,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/build.gradle</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

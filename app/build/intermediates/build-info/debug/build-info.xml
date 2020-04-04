@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run abi="armeabi-v7a,armeabi" api-level="21" build-mode="FULL" density="hdpi" format="10"
+    plugin-version="3.0.0" timestamp="1509314209486" token="3534143167117678106"
+    verifier="FULL_BUILD_REQUESTED">
+
+    <task name="javac" duration="0" />
+    <task name="instant-run-dex" duration="0" />
+    <task name="instant-run-transform" duration="1108" />
+    <task name="verifier" duration="2274" />
+
+    <artifact
+        location="C:\Users\batti\AndroidStudioProjects\Volve\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\batti\AndroidStudioProjects\Volve\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+
+    <build build-mode="FULL" timestamp="1509314209486" verifier="FULL_BUILD_REQUESTED">
+        <artifact
+            location="C:\Users\batti\AndroidStudioProjects\Volve\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="C:\Users\batti\AndroidStudioProjects\Volve\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+    </build>
+
+</instant-run>
