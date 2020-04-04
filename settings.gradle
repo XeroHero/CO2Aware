@@ -1,2 +1,1 @@
-include ':app'
-rootProject.name='CO2 Aware'
+include ':volve'

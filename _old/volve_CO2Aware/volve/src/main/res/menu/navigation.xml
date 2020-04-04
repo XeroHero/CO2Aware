@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/now_on"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/currently_on" />
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/title_search"/>
+
+    <item
+        android:id = "@+id/trending"
+        android:icon="@android:drawable/btn_plus"
+        android:title="@string/title_trending"/>
+
+    <item
+        android:id = "@+id/links"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="@string/title_links"/>
+</menu>

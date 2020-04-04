@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view" >
+
+    <!--All Events -->
+    <!--choose club-->
+    <!--choose soc-->
+    <!--login-->
+    <!--useful link-->
+    <!--fishhook around dublin-->
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_all_events"
+            android:icon="@drawable/events_icon"
+            android:iconTint="#ffffff"
+            android:title="@string/events.home.navigation" />
+        <item
+            android:id="@+id/nav_choose_club"
+            android:icon="@drawable/club_icon"
+            android:iconTint="#ffffff"
+            android:title="@string/choose_club.navigation" />
+        <item
+            android:id="@+id/nav_choose_soc"
+            android:icon="@drawable/society_icon"
+            android:iconTint="#ffffff"
+            android:title="@string/choose_society.navigation" />
+
+        <item
+            android:id="@+id/nav_imp_links"
+            android:icon="@drawable/link_icon"
+            android:iconTint="#ffffff"
+            android:title="@string/important_links.navigation" />
+
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/login_icon"
+            android:iconTint="#ffffff"
+            android:title="Login" />
+
+        <item
+            android:id="@+id/nav_fishhook"
+            android:icon="@drawable/fishhook_icon"
+            android:iconTint="#ffffff"
+            android:title="@string/dublin_fishhook_menu" />
+
+    </group>
+</menu>

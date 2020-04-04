@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/greenTipsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:lines="2"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/green_tips_tview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoSizeMaxTextSize="32dp"
+        android:autoSizeMinTextSize="16dp"
+        android:autoSizeTextType="uniform"
+        android:scrollbars="vertical" />
+</LinearLayout>

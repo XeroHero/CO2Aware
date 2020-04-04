@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "909676146066",
+    "firebase_url": "https://volve-ucd.firebaseio.com",
+    "project_id": "volve-ucd",
+    "storage_bucket": "volve-ucd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909676146066:android:10c6d6dbb48645c5",
+        "android_client_info": {
+          "package_name": "company.com.volve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909676146066-8k93ptb3g070qsp0ca9eb2ou3usjoc8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "company.com.volve",
+            "certificate_hash": "2d4a3609775cc5a8ab0b877f96ae16cff1d51074"
+          }
+        },
+        {
+          "client_id": "909676146066-fvln0lrc8ku4l7n15tvfdch0pij1l06r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx7Sy6FSMIBUGqhI-MHkY8yJY4GS1Ihlk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909676146066-fvln0lrc8ku4l7n15tvfdch0pij1l06r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

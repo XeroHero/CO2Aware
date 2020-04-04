@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backgroundcolour">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="2dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/goToUCDSocieties"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:cursorVisible="true"
+            android:linksClickable="true"
+            android:text="UCD Societies Website"
+            android:textColor="@color/cardview_light_background" />
+
+        <Button
+            android:id="@+id/goToUCDOfficial"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:onClick="goToUCDOfficial"
+            android:text="UCD Official Website"
+            android:textColor="@color/cardview_light_background" />
+
+
+
+        <Button
+            android:id="@+id/goToCSMoodle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="CS Moodle"
+            android:textColor="@color/cardview_light_background"
+            ></Button>
+
+        <Button
+            android:id="@+id/goToCampusIE"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="Campus ID"
+            android:textColor="@color/cardview_light_background"
+            ></Button>
+
+        <Button
+            android:id="@+id/goToCareersConnect"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="Careers Connect"
+            android:textColor="@color/cardview_light_background"
+            ></Button>
+
+        <Button
+            android:id="@+id/goToConnectUCD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD Connect"
+            android:textColor="@color/cardview_light_background"
+            ></Button>
+
+        <Button
+            android:id="@+id/goToInfoViewUCD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD Info View"
+            android:textColor="@color/cardview_light_background"
+            ></Button>
+
+        <Button
+            android:id="@+id/goToITServicesUCD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD IT Services"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+        <Button
+            android:id="@+id/goToLibrary"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:onClick="goToLibrary"
+            android:text="UCD Library"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+        <Button
+            android:id="@+id/goToMapsUCD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD Campus Maps"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+
+        <Button
+            android:id="@+id/goToRegistryUCD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD Registry"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+        <!--TODO: Need a scroll view for Links-->
+        <Button
+            android:id="@+id/goToStudentSupportUCD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD Student Support"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+
+        <Button
+            android:id="@+id/goToSisWeb"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD SisWeb"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+
+        <Button
+            android:id="@+id/goToSU_UCD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD SU"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+        <Button
+            android:id="@+id/goToUnicareUCD"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:autoLink="web"
+            android:background="@drawable/imp_link_button"
+            android:clickable="true"
+            android:text="UCD Unicare"
+            android:textColor="@color/cardview_light_background" ></Button>
+
+    </LinearLayout>
+
+</ScrollView>
