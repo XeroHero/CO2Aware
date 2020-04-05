@@ -4,10 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import company.com.volve.Fragments.ClubTabFragment;
-import company.com.volve.Fragments.EventsTabFragment;
-import company.com.volve.Fragments.SUTabFragment;
-import company.com.volve.Fragments.SocTabFragment;
+import company.com.volve.Fragments.CarFragment;
+import company.com.volve.Fragments.WalkFragment;
+import company.com.volve.Fragments.BikeFragment;
+import company.com.volve.Fragments.PublicTransportFragment;
 
 /**
  * Created by tejaswinikumar on 16/03/18.
@@ -15,7 +15,7 @@ import company.com.volve.Fragments.SocTabFragment;
 
 public class tabPagerAdapter extends FragmentPagerAdapter {
 
-    private String[] tabs_array = new String[]{"All Events", "Clubs", "Societies", "SU"};
+    private String[] tabs_array = new String[]{"Walk", "Car", "Public Transport", "Bike"};
 
     public tabPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -31,16 +31,16 @@ public class tabPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
 
             case 0:
-                return new EventsTabFragment();
+                return new WalkFragment();
 
             case 1:
-                return new ClubTabFragment();
+                return new CarFragment();
 
            case 2:
-                return new SocTabFragment();
+                return new PublicTransportFragment();
 
             case 3:
-                return new SUTabFragment();
+                return new BikeFragment();
 
         }
 

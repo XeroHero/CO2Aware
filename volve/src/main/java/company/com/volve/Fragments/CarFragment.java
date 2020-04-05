@@ -8,7 +8,6 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
@@ -39,14 +38,13 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
-//import company.com.volve.Activities.EventManager;
 import company.com.volve.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 @SuppressWarnings("ALL")
-public class ClubTabFragment extends Fragment {
+public class CarFragment extends Fragment {
     // event
     private static final String TAG_EVENTS = "data";
     private static final String TAG_WHAT = "name";
@@ -73,7 +71,7 @@ public class ClubTabFragment extends Fragment {
     ArrayList<HashMap<String, String>> eventList;
     private ProgressDialog progressDialog;
 
-    public ClubTabFragment() {
+    public CarFragment() {
         // Required empty public constructor
     }
 

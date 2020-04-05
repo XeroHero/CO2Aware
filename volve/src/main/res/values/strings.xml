@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name" translatable="false">Get Volvd</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -117,67 +117,68 @@
     <string name="clubs_button">UCD Clubs</string>
     <string name="connect_to_GMS">Connect to UCD Connect Account to sync your lecture Calendar</string>
     <string name="appId">286667115186661</string>
-    <string name="campus.ie" tools:ignore="ExtraTranslation">Campus.ie</string>
-    <string name="infoview.ucd" tools:ignore="ExtraTranslation">UCD InfoView</string>
-    <string name="careers.connect.ucd" tools:ignore="ExtraTranslation">Careers Connect UCD</string>
-    <string name="su.ucd" tools:ignore="ExtraTranslation">UCD SU</string>
-    <string name="connect.ucd" tools:ignore="ExtraTranslation">UCD Connect</string>
-    <string name="registry.ucd" tools:ignore="ExtraTranslation">UCD Registry</string>
-    <string name="student.support.ucd" tools:ignore="ExtraTranslation">UCD Student Support</string>
-    <string name="unicare.ucd" tools:ignore="ExtraTranslation">UCD UniCare</string>
-    <string name="maps.ucd" tools:ignore="ExtraTranslation">UCD Campus Maps</string>
+    <string name="campus.ie">Campus.ie</string>
+    <string name="infoview.ucd">UCD InfoView</string>
+    <string name="careers.connect.ucd">Careers Connect UCD</string>
+    <string name="it.services.ucd">UCD IT Services</string>
+    <string name="su.ucd">UCD SU</string>
+    <string name="connect.ucd">UCD Connect</string>
+    <string name="registry.ucd">UCD Registry</string>
+    <string name="student.support.ucd">UCD Student Support</string>
+    <string name="unicare.ucd">UCD UniCare</string>
+    <string name="maps.ucd">UCD Campus Maps</string>
     <string name="sisweb">SisWeb</string>
-    <string name="library.ucd" tools:ignore="ExtraTranslation">UCD Library</string>
-    <string name="moodle.cs.ucd" tools:ignore="ExtraTranslation">CS Moodle</string>
-    <string name="official.website.ucd" tools:ignore="ExtraTranslation">UCD Official Website</string>
-    <string name="societies.ucd" tools:ignore="ExtraTranslation">UCD Societies</string>
-    <string name="now.on" tools:ignore="ExtraTranslation">Now On!</string>
-    <string name="sisweb.url" tools:ignore="ExtraTranslation">sisweb.ucd.ie</string>
-    <string name="library.url" tools:ignore="ExtraTranslation">http://www.ucd.ie/library/</string>
-    <string name="campusIE.url" tools:ignore="ExtraTranslation">campus.ie/</string>
-    <string name="infoview.url" tools:ignore="ExtraTranslation">https://infoview.ucd.ie/</string>
-    <string name="careersconnect.url" tools:ignore="ExtraTranslation">careersconnect.ucd.ie/home.html</string>
-    <string name="IT.services.url" tools:ignore="ExtraTranslation">www.ucd.ie/itservices/</string>
-    <string name="ucdsu.url" tools:ignore="ExtraTranslation">ucdsu.ie/</string>
-    <string name="ucdconnect.url" tools:ignore="ExtraTranslation">https://www.ucd.ie/connect/</string>
-    <string name="registry.url" tools:ignore="ExtraTranslation">http://www.ucd.ie/registry/</string>
-    <string name="support.url" tools:ignore="ExtraTranslation">www.ucd.ie/students/support/</string>
-    <string name="unicare.url" tools:ignore="ExtraTranslation">ucdestates.ie/unicare/</string>
-    <string name="csmoodle.url" tools:ignore="ExtraTranslation">csmoodle.ucd.ie/</string>
-    <string name="ucd.url" tools:ignore="ExtraTranslation">www.ucd.ie/</string>
-    <string name="societiesUCD.url" tools:ignore="ExtraTranslation">societies.ucd.ie/</string>
+    <string name="library.ucd">UCD Library</string>
+    <string name="moodle.cs.ucd">CS Moodle</string>
+    <string name="official.website.ucd">UCD Official Website</string>
+    <string name="societies.ucd">UCD Societies</string>
+    <string name="now.on">Now On!</string>
+    <string name="sisweb.url">sisweb.ucd.ie</string>
+    <string name="library.url">http://www.ucd.ie/library/</string>
+    <string name="campusIE.url">campus.ie/</string>
+    <string name="infoview.url">https://infoview.ucd.ie/</string>
+    <string name="careersconnect.url">careersconnect.ucd.ie/home.html</string>
+    <string name="IT.services.url">www.ucd.ie/itservices/</string>
+    <string name="ucdsu.url">ucdsu.ie/</string>
+    <string name="ucdconnect.url">https://www.ucd.ie/connect/</string>
+    <string name="registry.url">http://www.ucd.ie/registry/</string>
+    <string name="support.url">www.ucd.ie/students/support/</string>
+    <string name="unicare.url">ucdestates.ie/unicare/</string>
+    <string name="csmoodle.url">csmoodle.ucd.ie/</string>
+    <string name="ucd.url">www.ucd.ie/</string>
+    <string name="societiesUCD.url">societies.ucd.ie/</string>
     <string name="unicare_phone_n">+353017167999</string>
-    <string name="app.loading_pls.wait" tools:ignore="ExtraTranslation">Application Loading. Please wait…</string>
-    <string name="error.occurred" tools:ignore="ExtraTranslation">The following error occurred:</string>
-    <string name="request.cancelled" tools:ignore="ExtraTranslation">Request cancelled.</string>
-    <string name="data.retrieved.with.cal.API" tools:ignore="ExtraTranslation">Data retrieved using the Google Calendar API:</string>
-    <string name="no.results" tools:ignore="ExtraTranslation">No results returned.</string>
-    <string name="play.services.required" tools:ignore="ExtraTranslation">This app requires Google Play Services. Please install Google Play Services on your device and relaunch this app.</string>
-    <string name="access.google.account.required" tools:ignore="ExtraTranslation">This app needs to access your Google account to sync with Google Calendar.</string>
-    <string name="calling.gCal.api" tools:ignore="ExtraTranslation">Calling Google Calendar API …</string>
-    <string name="FB.login" tools:ignore="ExtraTranslation">Login with Facebook</string>
+    <string name="app.loading_pls.wait">Application Loading. Please wait…</string>
+    <string name="error.occurred">The following error occurred:</string>
+    <string name="request.cancelled">Request cancelled.</string>
+    <string name="data.retrieved.with.cal.API">Data retrieved using the Google Calendar API:</string>
+    <string name="no.results">No results returned.</string>
+    <string name="play.services.required">This app requires Google Play Services. Please install Google Play Services on your device and relaunch this app.</string>
+    <string name="access.google.account.required">This app needs to access your Google account to sync with Google Calendar.</string>
+    <string name="calling.gCal.api">Calling Google Calendar API …</string>
+    <string name="FB.login">Login with Facebook</string>
     <string name="hash">KeyHash:</string>
-    <string name="failed.login.fb" tools:ignore="ExtraTranslation">Login attempt failed.</string>
-    <string name="fb.logout" tools:ignore="ExtraTranslation">Logout from Facebook</string>
+    <string name="failed.login.fb">Login attempt failed.</string>
+    <string name="fb.logout">Logout from Facebook</string>
     <string name="dob">Date Of Birth</string>
-    <string name="fb.login" tools:ignore="ExtraTranslation">FB Login</string>
-    <string name="login.error.fb" tools:ignore="ExtraTranslation">Login Error</string>
-    <string name="login.cancelled.fb" tools:ignore="ExtraTranslation">Login Cancelled</string>
-    <string name="login.successful.summary.one" tools:ignore="ExtraTranslation">Login Successful:</string>
-    <string name="id.user.login.fb.summary" tools:ignore="ExtraTranslation">User ID:</string>
-    <string name="authentication.token.fb.login" tools:ignore="ExtraTranslation">Auth Token: \"</string>
-    <string name="ucd.estates.url" tools:ignore="ExtraTranslation">ucdestates.ie/information/ucd-maps/</string>
-    <string name="useful.links.title" tools:ignore="ExtraTranslation">Useful Links</string>
-    <string name="empty.TextView.LinksActivity" tools:ignore="ExtraTranslation">This text will not be displayed.</string>
+    <string name="fb.login">FB Login</string>
+    <string name="login.error.fb">Login Error</string>
+    <string name="login.cancelled.fb">Login Cancelled</string>
+    <string name="login.successful.summary.one">Login Successful:</string>
+    <string name="id.user.login.fb.summary">User ID:</string>
+    <string name="authentication.token.fb.login">Auth Token: \"</string>
+    <string name="ucd.estates.url">ucdestates.ie/information/ucd-maps/</string>
+    <string name="useful.links.title">Useful Links</string>
+    <string name="empty.TextView.LinksActivity">This text will not be displayed.</string>
     <string name="title_activity_choose_society">ChooseSocietyActivity</string>
-    <string name="social.media.login" tools:ignore="ExtraTranslation">Login with social media</string>
+    <string name="social.media.login">Login with social media</string>
     <string name="login_error">Error during login</string>
-    <string name="login.scree.title" tools:ignore="ExtraTranslation">Login to Volve</string>
-    <string name="societies.label" tools:ignore="ExtraTranslation">Societies in UCD</string>
-    <string name="clubs.label" tools:ignore="ExtraTranslation">Clubs in UCD!</string>
-    <string name="choose.society" tools:ignore="ExtraTranslation">Choose a society</string>
-    <string name="choose.society.btnText" tools:ignore="ExtraTranslation">Choose a society</string>
-    <string name="about.us.text" tools:ignore="ExtraTranslation">We are university students just like you! We have developed this app from scratch for your benefit and hope you enjoy using it!</string>
+    <string name="login.scree.title">Login to Volve</string>
+    <string name="societies.label">Societies in UCD</string>
+    <string name="clubs.label">Clubs in UCD!</string>
+    <string name="choose.society">Choose a society</string>
+    <string name="choose.society.btnText">Choose a society</string>
+    <string name="about.us.text">We are university students just like you! We have developed this app from scratch for your benefit and hope you enjoy using it!</string>
     <string name="title_activity_main_frame">MainOpeningFrame</string>
 
     <!--navigation drawer-->
@@ -195,7 +196,7 @@
     <string name="nav_login">Notifications</string>
     <string name="nav_about_us">About Us</string>
     <string name="ChoseEmailClient">Choose the email program</string>
-    <string name="links.title" tools:ignore="ExtraTranslation">Useful Tips!</string>
+    <string name="links.title">Useful Links!</string>
 
     <!-- Toolbar titles when navigation menu item is selected -->
     <string-array name="nav_item_activity_titles">
@@ -217,107 +218,100 @@
     <string name="permission_not_granted">permission_not_granted</string>
     <string name="ok">ok</string>
     <string name="error">error</string>
-
-    <!--Menu Items -->
-
-    <string name="events.home.navigation" tools:ignore="ExtraTranslation">All Events</string>
-    <string name="choose_club.navigation" tools:ignore="ExtraTranslation">Choose Club</string>
-    <string name="choose_society.navigation" tools:ignore="ExtraTranslation">Choose Society</string>
-    <string name="login.navigation" tools:ignore="ExtraTranslation">Login</string>
-    <string name="important_links.navigation" tools:ignore="ExtraTranslation">Green Tips</string>
-    <string name="about_us.navigation" tools:ignore="ExtraTranslation">About Us</string>
+    <string name="events.home.navigation">Plan a Journey</string>
+    <string name="important_links.navigation">Green Tips</string>
     <string name="choose_club">Choose Club</string>
     <string name="search_soc_name">Search soc name</string>
     <string name="title_activity_fish_hook">FishHookActivity</string>
-<!--    <string name="large_text">-->
-<!--        "Material is the metaphor.\n\n"-->
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
 
-<!--        "A material metaphor is the unifying theory of a rationalized space and a system of motion."-->
-<!--        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "-->
-<!--        "technologically advanced and open to imagination and magic.\n"-->
-<!--        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "-->
-<!--        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "-->
-<!--        "flexibility of the material creates new affordances that supercede those in the physical "-->
-<!--        "world, without breaking the rules of physics.\n"-->
-<!--        "The fundamentals of light, surface, and movement are key to conveying how objects move, "-->
-<!--        "interact, and exist in space and in relation to each other. Realistic lighting shows "-->
-<!--        "seams, divides space, and indicates moving parts.\n\n"-->
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
 
-<!--        "Bold, graphic, intentional.\n\n"-->
+        "Bold, graphic, intentional.\n\n"
 
-<!--        "The foundational elements of print based design typography, grids, space, scale, color, "-->
-<!--        "and use of imagery guide visual treatments. These elements do far more than please the "-->
-<!--        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "-->
-<!--        "imagery, large scale typography, and intentional white space create a bold and graphic "-->
-<!--        "interface that immerse the user in the experience.\n"-->
-<!--        "An emphasis on user actions makes core functionality immediately apparent and provides "-->
-<!--        "waypoints for the user.\n\n"-->
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
 
-<!--        "Motion provides meaning.\n\n"-->
+        "Motion provides meaning.\n\n"
 
-<!--        "Motion respects and reinforces the user as the prime mover. Primary user actions are "-->
-<!--        "inflection points that initiate motion, transforming the whole design.\n"-->
-<!--        "All action takes place in a single environment. Objects are presented to the user without "-->
-<!--        "breaking the continuity of experience even as they transform and reorganize.\n"-->
-<!--        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "-->
-<!--        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"-->
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
 
-<!--        "3D world.\n\n"-->
+        "3D world.\n\n"
 
-<!--        "The material environment is a 3D space, which means all objects have x, y, and z "-->
-<!--        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "-->
-<!--        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "-->
-<!--        "position along the z-axis and has a standard 1dp thickness.\n"-->
-<!--        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "-->
-<!--        "emulated by manipulating the y-axis.\n\n"-->
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
 
-<!--        "Light and shadow.\n\n"-->
+        "Light and shadow.\n\n"
 
-<!--        "Within the material environment, virtual lights illuminate the scene. Key lights create "-->
-<!--        "directional shadows, while ambient light creates soft shadows from all angles.\n"-->
-<!--        "Shadows in the material environment are cast by these two light sources. In Android "-->
-<!--        "development, shadows occur when light sources are blocked by sheets of material at "-->
-<!--        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "-->
-<!--        "y-axis only. The following example shows the card with a height of 6dp.\n\n"-->
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
 
-<!--        "Resting elevation.\n\n"-->
+        "Resting elevation.\n\n"
 
-<!--        "All material objects, regardless of size, have a resting elevation, or default elevation "-->
-<!--        "that does not change. If an object changes elevation, it should return to its resting "-->
-<!--        "elevation as soon as possible.\n\n"-->
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
 
-<!--        "Component elevations.\n\n"-->
+        "Component elevations.\n\n"
 
-<!--        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "-->
-<!--        "does not vary from 6dp in one app to 16dp in another app).\n"-->
-<!--        "Components may have different resting elevations across platforms, depending on the depth "-->
-<!--        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"-->
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
 
-<!--        "Responsive elevation and dynamic elevation offsets.\n\n"-->
+        "Responsive elevation and dynamic elevation offsets.\n\n"
 
-<!--        "Some component types have responsive elevation, meaning they change elevation in response "-->
-<!--        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "-->
-<!--        "changes are consistently implemented using dynamic elevation offsets.\n"-->
-<!--        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "-->
-<!--        "to the component’s resting state. They ensure that elevation changes are consistent "-->
-<!--        "across actions and component types. For example, all components that lift on press have "-->
-<!--        "the same elevation change relative to their resting elevation.\n"-->
-<!--        "Once the input event is completed or cancelled, the component will return to its resting "-->
-<!--        "elevation.\n\n"-->
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
 
-<!--        "Avoiding elevation interference.\n\n"-->
+        "Avoiding elevation interference.\n\n"
 
-<!--        "Components with responsive elevations may encounter other components as they move between "-->
-<!--        "their resting elevations and dynamic elevation offsets. Because material cannot pass "-->
-<!--        "through other material, components avoid interfering with one another any number of ways, "-->
-<!--        "whether on a per component basis or using the entire app layout.\n"-->
-<!--        "On a component level, components can move or be removed before they cause interference. "-->
-<!--        "For example, a floating action button (FAB) can disappear or move off screen before a "-->
-<!--        "user picks up a card, or it can move if a snackbar appears.\n"-->
-<!--        "On the layout level, design your app layout to minimize opportunities for interference. "-->
-<!--        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "-->
-<!--        "when a user tries to pick up one of cards.\n\n"-->
-<!--    </string>-->
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
     <string name="fishHook_introduction">Here, every week, you\'ll find some interesting events happening outside the university, also on weekends. \nSource: FishHook WhatsApp group. "
         "\nJoin via this link: https://chat.whatsapp.com/Dx4drN5FBKgCDJYfTipQNc "</string>
     <string name="fishook_title">Weekly Events in the City</string>
@@ -325,21 +319,17 @@
     <string name="view_uploads">View Uploads</string>
     <string name="fishhook_title">Fishhook Group PDFs</string>
     <string name="about_us">About Us</string>
-    <string name="help.arrow.text" tools:ignore="ExtraTranslation">Tap the notification here to view events</string>
+    <string name="help.arrow.text">Tap the notification here to view events</string>
 
     <string name="dialogContent"> <a href="https://www.google.com/maps/search/?api=1">Location</a>\n </string>
     <string name="all_events_tab">All Events</string>
     <string name="clubs_tab">Clubs</string>
     <string name="societies_tab">Societies</string>
     <string name="su_tab">SU</string>
-    <string name="question_download">Do you want to download the event brochure for this week?</string>
-    <string name="fishook_brochure_title">Event Brochure</string>
-    <string name="pdf_status_downloading">Downloading PDF</string>
-    <string name="pdf_post_no">OK, but don\'t miss out!</string>
-    <string name="web_portal_url">https://ucdvolve.pythonanywhere.com</string>
-    <string name="email_via">Email developers via…</string>
-    <string name="feedback_button">Get Volvd App Feedback (Android)</string>
-    <string name="dev_email">getvolvd@gmail.com</string>
+
+    <string name="email_via">Email developer via…</string>
+    <string name="feedback_button">CO2Aware App Feedback (Android)</string>
+    <string name="dev_email">battilocchilorenzo98@gmail.com</string>
     <string name="email_client_missing">There are no email clients installed.</string>
     <string name="all_events_fragment">all events fragment</string>
     <string name="what">WHAT:</string>
@@ -356,5 +346,8 @@
     <string name="newlineVenue">Venue:</string>
     <string name="mapsSearchQuery"><![CDATA[https://www.google.com/maps/search/?api=1&query=]]></string>
     <string name="url_placeholder">URL:</string>
+    <string name="green_tips_text">- Take a shower instead of a bath! You\'ll be saving some water
+    \n - Take a lift with a colleague to work,or even better, use public transport: If everyone does this, there will be less cars on the road and everyone will reach their destination quicker</string>
+    <string name="friend1_name">Bob Marley</string>
 
 </resources>

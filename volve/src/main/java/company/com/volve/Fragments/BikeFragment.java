@@ -1,5 +1,6 @@
 package company.com.volve.Fragments;
 
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -7,7 +8,6 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
@@ -38,13 +38,13 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.TimeZone;
 
-//import company.com.volve.Activities.EventManager;
 import company.com.volve.R;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 @SuppressWarnings("ALL")
-public class EventsTabFragment extends Fragment {
+public class BikeFragment extends Fragment {
     // event
     private static final String TAG_EVENTS = "data";
     private static final String TAG_WHAT = "name";
@@ -61,20 +61,18 @@ public class EventsTabFragment extends Fragment {
     private static final String TAG_WHERE_LOCATION_ZIP = "zip";
     private static final String TAG_DESCRIPTION = "description";
     private static final String TAG_TYPE = "type";
-    private static final String TAG_URL = "url";
     // url to get json data
-
+    private static String url = "http://blank.org";
     final String TAG = "EventsTabFragment.java";
     ListView lv;
-
     int year_range = 2; // get events for the next x years
     // events JSONArray
     JSONArray events = null;
-
+    // Hashmap for ListView
     ArrayList<HashMap<String, String>> eventList;
     private ProgressDialog progressDialog;
 
-    public EventsTabFragment() {
+    public BikeFragment() {
         // Required empty public constructor
     }
 
@@ -82,14 +80,16 @@ public class EventsTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_events_tab, container, false);
 
+        // get since date
         SimpleDateFormat sdfDateTime = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         String since_date = sdfDateTime.format(new Date(System.currentTimeMillis()));
 
         String since_unix_timestamp = getTimeStamp(since_date);
 
+        // get until date
         Calendar c = Calendar.getInstance();
         try {
             c.setTime(sdfDateTime.parse(since_date));
@@ -104,12 +104,7 @@ public class EventsTabFragment extends Fragment {
         String until_unix_timestamp = getTimeStamp(until_date);
 
         eventList = new ArrayList<HashMap<String, String>>();
-
-//        try {
-//            eventList = EventManager.getEvents();
-//        }catch (NullPointerException e){
-//            Log.e("NPE getEvents", "getEvents generated a NullPointerException");
-//        }
+//        eventList = EventManager.getFilteredList("3"); //3 == SU events
         /*
             Event description is returned when a user clicks on a specific event.
             lv when clicked gets the description of that event.
@@ -126,7 +121,6 @@ public class EventsTabFragment extends Fragment {
                 final String what = ((TextView) view.findViewById(R.id.what)).getText().toString();
                 final String when = ((TextView) view.findViewById(R.id.when)).getText().toString().replaceAll("Date/Time:", "");
                 final String where = ((TextView) view.findViewById(R.id.where)).getText().toString().replaceAll("Location:", "");;
-                final String url = ((TextView) view.findViewById(R.id.url)).getText().toString().replaceAll("URL:", "");;
 //                Toast.makeText(getContext(), where, Toast.LENGTH_LONG).show();
                 System.out.println("WHEN IS: "+when);
                 int index =0;
@@ -173,13 +167,10 @@ public class EventsTabFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
-                                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-                                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_CALENDAR}, 123);
-                                }
+                                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_CALENDAR}, 123);
 
-                                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-                                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_CALENDAR}, 1);
-                                }
+                                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_CALENDAR}, 1);
+
                                 int calendarID=1;
                                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                                     calendarID= 3;
@@ -214,14 +205,17 @@ public class EventsTabFragment extends Fragment {
                                 Cursor c = CalendarContract.Reminders.query(cr, eventID,
                                         new String[]{CalendarContract.Reminders.MINUTES});
                                 c.close();
-                                Toast.makeText(getContext(), "This event is added to your calendar", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "THis event is added to your calendar", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .show();
             }
         });
 
-        // update parsed data into ListView
+
+        // Calling async task to get json
+//        new GetEvents().execute();
+
         try {
             ListAdapter adapter = new SimpleAdapter(
                     getContext(),
@@ -243,59 +237,53 @@ public class EventsTabFragment extends Fragment {
 
             lv.setAdapter(adapter);
         } catch (Exception e) {
-            Log.e("rotationEvent", "Crash avoided with catch block");
+            Log.e("lvAdapter", "Crash avoided with catch block");
         }
         return view;
     }
 
-    static boolean isEventStillUpcoming(String date){
-        String[] arrified = date.split(", ");
-        String year_hour = arrified[2];
-        int year = Integer.parseInt(year_hour.split(" ")[0]);
-        String hour = year_hour.split(" ")[1];
-        String hour_type = year_hour.split(" ")[2];
-        System.out.println("Hours: "+hour+" - "+hour_type);
-        String trueHour = CorrectHour(hour, hour_type);
-        int day = Integer.parseInt(arrified[1].split(" ")[1]);
-        int month = month(arrified[1].split(" ")[0]);
-        Calendar eventTime = Calendar.getInstance();
-        int hourOfDay = Integer.parseInt((trueHour).split(":")[0]);
-        int minutes = Integer.parseInt(trueHour.split(":")[1]);
-        eventTime.set(year, month, day, hourOfDay,minutes, 0);
-        Calendar now = Calendar.getInstance();
-        System.out.println(eventTime.getTimeInMillis()+" - "+now.getTimeInMillis());
-        if(now.getTimeInMillis() < eventTime.getTimeInMillis()) {
-            return true;
+
+
+
+    // get formatted 'when' field
+    public String getWhen(String dateInput, String timeZone) {
+
+        String dateOutput = "";
+
+        try {
+
+            DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ssZ");
+
+            DateFormat df2 = new SimpleDateFormat("cccc, MMMM d, yyyy hh:mm a");
+            df2.setTimeZone(TimeZone.getTimeZone(timeZone));
+
+            dateOutput = df2.format(df1.parse(dateInput));
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-        else if(now.getTimeInMillis() > eventTime.getTimeInMillis()) {
-            return false;
-        }
-        else {
-            return true;
-        }
+
+        return dateOutput;
     }
 
-	
-	private static String CorrectHour(String hour, String hour_type) {
-		if(hour_type.equalsIgnoreCase("PM")) {
-			int h = (Integer.parseInt(hour.split(":")[0])+12)%23;
-			int m = Integer.parseInt(hour.split(":")[1]);
-			return h+":"+m;
-		}else {
-			return hour;
-		}
-	}
-	private static int month(String month) {
-		String[] monthsOfTheYear = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-		for(int monthNumeral =0; monthNumeral<monthsOfTheYear.length; monthNumeral++) {
-			if(month.equalsIgnoreCase(monthsOfTheYear[monthNumeral])) {
-				
-				return monthNumeral;
-				
-			}
-		}
-		return -1; //not a month
-	}
+    // get unix timestamp
+    public String getTimeStamp(String ymd) {
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date date = null;
+
+        try {
+            date = (Date) formatter.parse(ymd);
+        } catch (ParseException e) {
+            e.getStackTrace();
+        }
+
+        long output = date.getTime() / 1000L;
+        String str = Long.toString(output);
+        long timestamp_result = Long.parseLong(str);
+
+        return Long.toString(timestamp_result);
+    }
+
     int monthNumberConversion(String[] month) {
         final int monthNumber;
         switch (month[0]){
@@ -354,43 +342,4 @@ public class EventsTabFragment extends Fragment {
         return monthNumber;
     }
 
-
-    // get formatted 'when' field
-    public String getWhen(String dateInput, String timeZone) {
-
-        String dateOutput = "";
-
-        try {
-
-            DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ssZ");
-
-            DateFormat df2 = new SimpleDateFormat("cccc, MMMM d, yyyy hh:mm a");
-            df2.setTimeZone(TimeZone.getTimeZone(timeZone));
-
-            dateOutput = df2.format(df1.parse(dateInput));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        return dateOutput;
-    }
-
-    // get unix timestamp
-    public String getTimeStamp(String ymd) {
-        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
-        Date date = null;
-
-        try {
-            date = (Date) formatter.parse(ymd);
-        } catch (ParseException e) {
-            e.getStackTrace();
-        }
-
-        long output = date.getTime() / 1000L;
-        String str = Long.toString(output);
-        long timestamp_result = Long.parseLong(str);
-
-        return Long.toString(timestamp_result);
-    }
 }

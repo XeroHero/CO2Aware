@@ -16,5 +16,8 @@
     <item name="text_loadingScreen" type="id"/>
     <item name="nav_fishhook" type="id" />
     <item name="nav_main_activity" type="id" />
+    <item name="nav_friends_list" type="id"/>
+<!--    <item name="friends_table_view" type="id">friends_table_view</item>-->
+
 
 </resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+    <TableRow>
+        <TextView
+            android:text="Ranking"
+            android:padding="3dip"
+            android:textStyle="bold"/>
+        <TextView
+            android:text="Name"
+            android:padding="3dip"
+            android:textStyle="bold"
+            android:gravity="center"/>
+        <TextView
+            android:text="Today's Green Score"
+            android:gravity="right"
+            android:padding="3dip"
+            android:textStyle="bold"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="1"
+            android:layout_gravity="center" />
+        <TextView
+            android:text="@string/friend1_name"
+            android:padding="3dip" />
+        <TextView
+            android:text="450"
+            android:gravity="right"
+            android:padding="3dip" />
+    </TableRow>
+
+</TableLayout>
