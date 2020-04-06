@@ -11,41 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbf3296-9d2a-4378-a2b5-261fd90b8317" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/FriendsFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/volve/src/main/res/drawable/bg_main.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_friend_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_friends.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_green_tips.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/DownloadManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/EventManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/MainOpeningScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/MainOpeningScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/tabPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Activities/tabPagerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/ChooseClubNavFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/ChooseSocNavigationFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/ClubTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/CarFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/EventsTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/WalkFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/ImpLinksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/GreenTipsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/InsideSocFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/SUTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/BikeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/SocTabFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/java/company/com/volve/Fragments/PublicTransportFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/drawable/background_main_screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/drawable/background_main_screen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/drawable/bg_main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_club_tab.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_imp_links.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_inside_soc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_soc_tab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_soc_tab.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_sutab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_sutab.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/menu/activity_main_opening_screen_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/menu/activity_main_opening_screen_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/values/ids.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/values/ids.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout-v21/fragment_choose_soc_navigation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_choose_soc_navigation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_friend_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_friend_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_friends.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/layout/fragment_friends.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/volve/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volve/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/volve/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +24,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_27" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="R7L4C15817009763" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -88,6 +59,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/volve/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/volve/src/main/res/drawable" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.3.1" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">

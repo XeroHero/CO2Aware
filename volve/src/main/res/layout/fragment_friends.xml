@@ -8,13 +8,6 @@
         android:layout_height="fill_parent"
         android:scrollbars="vertical" >
 
-        <TableLayout
-            android:id="@+id/fragment1_tlayout"
-            android:background="@color/LightGreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:stretchColumns="0,1" >
 
-        </TableLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
