@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Send data to activity</string>
+    <string name="send_data">Send data to second activity</string>
+    <string name="type_your_message">Type your message here...</string>
+    <string name="fill_with_message">Please fill with your message.</string>
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="green_tips_title">40 Ways to go Green</string>
+</resources>

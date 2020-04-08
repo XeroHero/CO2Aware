@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CO2Aware.iml" filepath="$PROJECT_DIR$/CO2Aware.iml" group="CO2Aware" />
-      <module fileurl="file://$PROJECT_DIR$/volve/volve.iml" filepath="$PROJECT_DIR$/volve/volve.iml" group="CO2Aware/volve" />
+      <module fileurl="file://$PROJECT_DIR$/SendData.iml" filepath="$PROJECT_DIR$/SendData.iml" group="SendData" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="SendData/app" />
     </modules>
   </component>
 </project>
