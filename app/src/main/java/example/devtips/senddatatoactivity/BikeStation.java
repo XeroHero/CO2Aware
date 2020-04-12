@@ -2,14 +2,18 @@ package example.devtips.senddatatoactivity;
 
 public class BikeStation {
 
-    public String name;
-    public int bikesAvailable;
-    public int parkingAvailable;
-    public int number;
-    public String contractName;
-    public String address;
-    public double lat;
-    public double lng;
+    private String name;
+    private int bikesAvailable;
+    private int parkingAvailable;
+    private int number;
+    private String contractName;
+    private String address;
+    private double lat;
+    private double lng;
+    private boolean banking;
+    private boolean bonus;
+    private String status;
+    private long lastUpdate;
 
     public BikeStation(String name, int bikesAvailable, int parkingAvailable, int number, String
             contractName, String address, int lat, int lng, boolean banking, boolean bonus, String status, long lastUpdate) {
@@ -31,23 +35,23 @@ public class BikeStation {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public int getBikesAvailable() {
+    int getBikesAvailable() {
         return bikesAvailable;
     }
 
-    public void setBikesAvailable(int bikesAvailable) {
+    void setBikesAvailable(int bikesAvailable) {
         this.bikesAvailable = bikesAvailable;
     }
 
-    public int getParkingAvailable() {
+    int getParkingAvailable() {
         return parkingAvailable;
     }
 
-    public void setParkingAvailable(int parkingAvailable) {
+    void setParkingAvailable(int parkingAvailable) {
         this.parkingAvailable = parkingAvailable;
     }
 
@@ -55,7 +59,7 @@ public class BikeStation {
         return number;
     }
 
-    public void setNumber(int number) {
+    void setNumber(int number) {
         this.number = number;
     }
 
@@ -67,11 +71,11 @@ public class BikeStation {
         this.contractName = contractName;
     }
 
-    public String getAddress() {
+    String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    void setAddress(String address) {
         this.address = address;
     }
 
@@ -79,7 +83,7 @@ public class BikeStation {
         return lat;
     }
 
-    public void setLat(double lat) {
+    void setLat(double lat) {
         this.lat = lat;
     }
 
@@ -87,7 +91,7 @@ public class BikeStation {
         return lng;
     }
 
-    public void setLng(double lng) {
+    void setLng(double lng) {
         this.lng = lng;
     }
 
@@ -95,7 +99,7 @@ public class BikeStation {
         return banking;
     }
 
-    public void setBanking(boolean banking) {
+    void setBanking(boolean banking) {
         this.banking = banking;
     }
 
@@ -103,7 +107,7 @@ public class BikeStation {
         return bonus;
     }
 
-    public void setBonus(boolean bonus) {
+    void setBonus(boolean bonus) {
         this.bonus = bonus;
     }
 
@@ -111,7 +115,7 @@ public class BikeStation {
         return status;
     }
 
-    public void setStatus(String status) {
+    void setStatus(String status) {
         this.status = status;
     }
 
@@ -119,19 +123,13 @@ public class BikeStation {
         return lastUpdate;
     }
 
-    public void setLastUpdate(long lastUpdate) {
+    void setLastUpdate(long lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
-    public boolean banking;
-    public boolean bonus;
-    public String status;
-    public long lastUpdate;
-
-    public BikeStation(){
+    BikeStation() {
 
     }
-
 
 
 }

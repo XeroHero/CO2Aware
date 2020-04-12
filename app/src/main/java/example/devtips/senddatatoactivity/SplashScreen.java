@@ -27,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
         journeyPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SplashScreen.this, TransportPlanner.class));
+                startActivity(new Intent(SplashScreen.this, JourneyPlannerItinerary.class));
             }
         });
 
