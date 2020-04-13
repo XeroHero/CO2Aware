@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Send data to activity</string>
+    <string name="app_name">CO2 Aware</string>
     <string name="send_data">Send data to second activity</string>
     <string name="type_your_message">Type your message here...</string>
     <string name="fill_with_message">Please fill with your message.</string>
