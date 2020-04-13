@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -20,19 +21,26 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
  * status bar and navigation/system bar) with user interaction.
  */
 public class SplashScreen extends AppCompatActivity {
-    private static final int MY_PERMISSIONS_REQUEST_FOR_LOCATION = 98;
+    private static final int MY_PERMISSIONS_REQUEST_FOR_LOCATION = 1;
     Button journeyPlan;
     Button greenTips;
 
 //    NB: Required to request permissions in advance. Else, crash on first opening of GMaps
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_FOR_LOCATION: {
-                if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "This app requires Location permission. Please allow it through Settings app or restart the app to receive the dialog again..", Toast.LENGTH_LONG).show();
-                }
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == MY_PERMISSIONS_REQUEST_FOR_LOCATION) {
+            if (grantResults.length > 0 && grantResults[0] != PERMISSION_GRANTED) {
+                boolean permissionGranted = false;
+                do {
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                            MY_PERMISSIONS_REQUEST_FOR_LOCATION);
+                    permissionGranted = grantResults[0] == PERMISSION_GRANTED;
+                } while (!permissionGranted);
+
+                Toast.makeText(this, "This app requires Location permission. Please allow it through Settings app or restart the app to receive the dialog again..", Toast.LENGTH_LONG).show();
+
             }
         }
     }
