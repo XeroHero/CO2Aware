@@ -1,23 +1,30 @@
 package example.devtips.senddatatoactivity;
 
+import android.Manifest;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback {
-
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                MY_PERMISSIONS_REQUEST_LOCATION);
         setContentView(R.layout.activity_journey_planner_itinerary);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -162,5 +169,25 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker117).title("Bike Station 117"));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(dublinGeneric)); //set map to initially show a view of the entire city
+
+//        mMap.setMaxZoomPreference(10);
+        mMap.setMyLocationEnabled(true);
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                String title = marker.getTitle();
+                String replace = title.replace("Bike Station ", " ");
+                System.out.println("BIKE STN CLICKED: "+ replace);
+                return true;
+            }
+        });
+//        mMap.setMinZoomPreference();
+    }
+
+    private static String cropTitle(String title) {
+
+        title.replace("Bike Station ", "");
+        return title;
     }
 }
