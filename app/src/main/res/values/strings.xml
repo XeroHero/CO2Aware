@@ -9,4 +9,5 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="green_tips_title">40 Ways to go Green</string>
     <string name="title_activity_journey_planner_itinerary">Your Chosen Itinerary</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyB4pfSZwkbrKDasVSw7hmME0sYdV36C2xY</string>
 </resources>
