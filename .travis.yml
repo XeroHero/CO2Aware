@@ -95,6 +95,8 @@ before_deploy:
 
 - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $HOME/example_keystore.jks -storepass $storepass -keypass $keypass app-release-unsigned.apk ExampleKeystoreAlias
 
+after_success:
+- sh set_tags.sh
 
 # Verification
 
