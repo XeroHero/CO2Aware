@@ -20,12 +20,12 @@ public class SplashScreenButtonsTest {
     private SplashScreen mSplashScreen = null;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp()  {
         mSplashScreen = mActivityTestRule.getActivity(); //get the corresponding activity of SplashScreen
     }
 
     @After
-    public void tearDown() throws Exception{
+    public void tearDown(){
         mSplashScreen = null; //teardown the splashScreen
     }
 
