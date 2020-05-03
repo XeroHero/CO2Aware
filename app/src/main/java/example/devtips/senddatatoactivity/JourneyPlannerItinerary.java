@@ -9,17 +9,20 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.junit.Test;
+
+import static example.devtips.senddatatoactivity.JourneyPlannerItinerary.*;
+import static org.junit.Assert.assertThat;
 
 public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
-    private GoogleMap mMap;
+    static GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,3 +207,5 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
     }
 
 }
+
+

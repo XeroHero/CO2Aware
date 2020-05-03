@@ -5,7 +5,7 @@ import com.google.android.gms.maps.model.LatLng;
 class BikeConstants {
 
 
-static LatLng marker42 = new LatLng(53.349562, -6.278198);
+    static LatLng marker42 = new LatLng(53.349562, -6.278198);
     static LatLng marker30 = new LatLng(53.353462, -6.265305);
     static LatLng marker54 = new LatLng(53.336021, -6.26298);
     static LatLng marker108 = new LatLng(53.359405, -6.276142);
@@ -115,7 +115,6 @@ static LatLng marker42 = new LatLng(53.349562, -6.278198);
     static LatLng marker92 = new LatLng(53.347802, -6.292432);
     static LatLng marker21 = new LatLng(53.34218, -6.254485);
     static LatLng marker88 = new LatLng(53.3488, -6.281637);
-
 
 
 }
