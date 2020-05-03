@@ -1,12 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "example.devtips.senddatatoactivity"
         minSdkVersion 16
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -36,11 +41,13 @@ dependencies {
 
     //testing frameworks
     implementation 'junit:junit:4.13'
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
 
+    testCompile 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:core:1.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test:rules:1.2.0'
+//    androidTestImplementation 'androidx.test:rules:1.2.0'
+    testImplementation "org.robolectric:robolectric:4.2.1"
 }

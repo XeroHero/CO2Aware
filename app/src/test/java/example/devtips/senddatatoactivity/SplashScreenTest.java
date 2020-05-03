@@ -8,12 +8,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+@RunWith(RobolectricTestRunner.class)
+public class SplashScreenTest {
 
-public class SplashScreenButtonsTest {
-
-    @Rule
+       @Rule
     public ActivityTestRule<SplashScreen> mActivityTestRule =
             new ActivityTestRule<SplashScreen>(SplashScreen.class); //launch activity
 
