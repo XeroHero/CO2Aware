@@ -42,7 +42,7 @@ dependencies {
     //testing frameworks
     implementation 'junit:junit:4.13'
 
-    testCompile 'com.android.support.test:rules:1.0.2'
+    testImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
