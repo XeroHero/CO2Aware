@@ -17,9 +17,27 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven {
+            url 'https://raw.githubusercontent.com/wyscout/maven-private/releases/'
+            name 'Wyscout'
+
+            credentials(HttpHeaderCredentials) {
+                name = "Authorization"
+                value = "Bearer 79f4e2f49a41c56083fcc60a6c42bd0fe6072dc7"
+            }
+
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
         jcenter()
+        maven { url "https://jitpack.io" }
     }
+
 }
 
 task clean(type: Delete) {
