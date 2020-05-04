@@ -22,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_FOR_LOCATION = 1;
     Button journeyPlan;
     Button greenTips;
-
+Button friendList;
 //    NB: Required to request permissions in advance. Else, crash on first opening of GMaps
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -68,6 +68,14 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SplashScreen.this, TipsActivity.class));
+            }
+        });
+
+        friendList =findViewById(R.id.friends_btn);
+        friendList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SplashScreen.this, FriendsActivity.class));
             }
         });
     }
