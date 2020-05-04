@@ -2,6 +2,8 @@ package example.devtips.senddatatoactivity;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -16,6 +18,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+import example.devtips.senddatatoactivity.models.Location;
+
 public class APICaller {
 
     private static JSONObject jObj = null;
@@ -24,7 +28,7 @@ public class APICaller {
     // constructor
     public APICaller() {}
 
-    static JSONObject getJSONFromUrl(String u) {
+    static JSONObject getJSONFromUrl() {
 
         // Making HTTP request
         InputStream is = null;
@@ -56,6 +60,9 @@ public class APICaller {
             }
             is.close();
             json = sb.toString();
+            Gson gson = new Gson();
+            Location location = gson.fromJson(json, Location.class);
+            Log.d("PROVA","");
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
