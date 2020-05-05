@@ -2,7 +2,9 @@ package example.devtips.senddatatoactivity;
 
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,12 +19,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 public class FriendsActivity extends Activity {
-    ArrayList<String> friendsArray = new ArrayList<>();
+//    ArrayList<String> friendsArray = new ArrayList<>();
 
     private Button save;
     Button cancel;
@@ -43,8 +46,11 @@ public class FriendsActivity extends Activity {
         layoutInflater = LayoutInflater.from(this);
         listView = findViewById(R.id.friends_list);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_input_dialog, null);
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.activity_friends_listview, friendsArray);
+        final ArrayList<String> retrieved = new ArrayList<>(PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getStringSet("SAVEDATA", new HashSet<String>()));
 
+        ArrayAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.activity_friends_listview, retrieved);
+
+        saveSharedPreferences(retrieved);
 
         listView.setAdapter(adapter);
         setTheme(R.style.Theme_AppCompat);
@@ -53,6 +59,7 @@ public class FriendsActivity extends Activity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 // Create a AlertDialog Builder.
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FriendsActivity.this);
                 // Set title, icon, can not cancel properties.
@@ -78,23 +85,13 @@ public class FriendsActivity extends Activity {
                         // Get data from popup dialog editeext.
                         String userName = user.getText().toString();
                         // Create data for the listview.
-                        String[] titleArr = {"User Name"};
-                        String[] dataArr = {userName};
+                        retrieved.add(userName);
 
-//                        ArrayList<String> itemDataList = new ArrayList<>();
 
-                        int titleLen = titleArr.length;
-                        List<String> listItemMap = null;
-                        for (String s : titleArr) {
-                            listItemMap = new ArrayList<String>();
-                            listItemMap.add(s);
-                            friendsArray.add(userName);
-                        }
-
-//                        itemDataList.add(String.valueOf(listItemMap));
                         listView.setItemsCanFocus(true);
-                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.activity_friends_listview, friendsArray);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.activity_friends_listview, retrieved);
                         listView.setAdapter(adapter);
+                        saveSharedPreferences(retrieved);
                         alertDialog.cancel();
                     }
                 });
@@ -110,6 +107,15 @@ public class FriendsActivity extends Activity {
         });
     }
 
+    private void saveSharedPreferences(ArrayList<String> tobesaved) {
+//        ArrayList<String> tobesaved = getData(); // fetch the data
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putStringSet("SAVEDATA", new HashSet<>(tobesaved));
+        edit.apply();
+
+
+    }
 
     /* Initialize popup dialog view and ui controls in the popup dialog. */
     private void initPopupViewControls() {
@@ -145,7 +151,7 @@ public class FriendsActivity extends Activity {
 
     /* If user data exist in the listview then retrieve them to a string list. */
     private List<String> getExistUserDataInListView(ListView listView) {
-        List<String> ret = new ArrayList<String>();
+        List<String> ret = new ArrayList<>();
 
         if (listView != null) {
             ListAdapter listAdapter = listView.getAdapter();
