@@ -46,7 +46,8 @@
         <activity
             android:name=".JourneyPlannerItinerary"
             android:label="@string/title_activity_journey_planner_itinerary" />
-        <activity android:name=".AboutActivity" />
+        <activity android:name=".AboutActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name=".FriendsActivity" />
     </application>
 
