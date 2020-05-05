@@ -9,7 +9,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     tools:context="example.devtips.senddatatoactivity.FriendsActivity">
-
+    
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

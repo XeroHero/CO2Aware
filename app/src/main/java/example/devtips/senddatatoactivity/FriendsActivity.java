@@ -3,16 +3,20 @@ package example.devtips.senddatatoactivity;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,7 +26,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
+
+import es.dmoral.toasty.Toasty;
 
 public class FriendsActivity extends Activity {
 //    ArrayList<String> friendsArray = new ArrayList<>();
@@ -33,6 +40,16 @@ public class FriendsActivity extends Activity {
     LayoutInflater layoutInflater;
     View popupInputDialogView;
     ListView listView;
+    Button remove;
+
+    public void configureToasty(@NonNull Typeface typeface, boolean tintIcon, int sizeInSp, boolean allowQueue){
+        Toasty.Config.getInstance()
+                .setToastTypeface(typeface) //optional
+                .tintIcon(tintIcon) // optional (apply textColor also to the icon)
+                .setTextSize(sizeInSp) // optional
+                .allowQueue( allowQueue) // optional (prevents several Toastys from queuing)
+                .apply(); // required
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +61,44 @@ public class FriendsActivity extends Activity {
         cancel = new Button(this);
         user = new EditText(this);
         layoutInflater = LayoutInflater.from(this);
+        remove = new Button(this);
         listView = findViewById(R.id.friends_list);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_input_dialog, null);
         final ArrayList<String> retrieved = new ArrayList<>(PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getStringSet("SAVEDATA", new HashSet<String>()));
 
-        ArrayAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.activity_friends_listview, retrieved);
+        final ArrayAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.activity_friends_listview, retrieved);
 
         saveSharedPreferences(retrieved);
 
         listView.setAdapter(adapter);
+        listView.setClickable(true);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog.Builder removeFriend = new AlertDialog.Builder(FriendsActivity.this);
+                removeFriend.setTitle("Remove this friend?");
+                removeFriend.setCancelable(false);
+                initPopupViewControls();
+                final AlertDialog removeFrend = removeFriend.create();
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        removeFrend.cancel();
+                    }
+                });
+                remove.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int value = (int) adapter.getItem(position);
+                        retrieved.remove(value);
+                    }
+                });
+
+
+            }
+        });
+
         setTheme(R.style.Theme_AppCompat);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -63,7 +109,7 @@ public class FriendsActivity extends Activity {
                 // Create a AlertDialog Builder.
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FriendsActivity.this);
                 // Set title, icon, can not cancel properties.
-                alertDialogBuilder.setTitle("Add a friend");
+                alertDialogBuilder.setTitle("Add or invite a friend");
                 alertDialogBuilder.setIcon(R.drawable.ic_launcher_background);
                 alertDialogBuilder.setCancelable(false);
 
@@ -76,8 +122,7 @@ public class FriendsActivity extends Activity {
                 // Create AlertDialog and show.
                 final AlertDialog alertDialog = alertDialogBuilder.create();
 
-
-                // When user click the save user data button in the popup dialog.
+                // When user click the save button in the popup dialog.
                 save.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -85,7 +130,17 @@ public class FriendsActivity extends Activity {
                         // Get data from popup dialog editeext.
                         String userName = user.getText().toString();
                         // Create data for the listview.
+                        configureToasty(null, false, 12, false);
+                        if (userName.contains("@")){
+                            Toast toast=Toast. makeText(getApplicationContext(),"Email has been sent to " + userName,Toast. LENGTH_LONG);
+                            toast.show();
+                            userName += " (Pending confirmation)";
+//                            Toasty.success(this, R.string.success_email_toasty + userName, Toasty.LENGTH_LONG).show();
+//                            Toasty.success
+                        }else
+                            userName += "  " + randomScore(0, 10000);
                         retrieved.add(userName);
+
 
 
                         listView.setItemsCanFocus(true);
@@ -105,6 +160,11 @@ public class FriendsActivity extends Activity {
                 alertDialog.show();
             }
         });
+    }
+
+    public static int randomScore(int min, int max) {
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 
     private void saveSharedPreferences(ArrayList<String> tobesaved) {
