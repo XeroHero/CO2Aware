@@ -9,13 +9,38 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     tools:context="example.devtips.senddatatoactivity.FriendsActivity">
-    
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/friends_list">
     </ListView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/empty_listview_friends">
+
+
+        <TextView
+            android:id="@+id/textview_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/empty_listview_text"
+            android:textAlignment="center"
+            android:textSize="32dp"
+            android:paddingTop="40dp"
+            />
+
+        <ImageView
+            android:id="@+id/smiley"
+            android:layout_width="match_parent"
+            android:layout_height="214dp"
+            android:layout_above="@id/textview_empty"
+            android:layout_marginBottom="-634dp"
+            android:src="@drawable/friends" />
+    </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

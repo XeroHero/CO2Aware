@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,16 +39,19 @@ public class FriendsActivity extends Activity {
     Button cancel;
     private EditText user;
     LayoutInflater layoutInflater;
-    View popupInputDialogView;
+    View popupInputDialogView, popupRemoveDialogView;
     ListView listView;
     Button remove;
+    Button cancelRemove;
+    private View emptyView;
+    private int screenHeight, screenWidth;
 
-    public void configureToasty(@NonNull Typeface typeface, boolean tintIcon, int sizeInSp, boolean allowQueue){
+    public void configureToasty(@NonNull Typeface typeface, boolean tintIcon, int sizeInSp, boolean allowQueue) {
         Toasty.Config.getInstance()
                 .setToastTypeface(typeface) //optional
                 .tintIcon(tintIcon) // optional (apply textColor also to the icon)
                 .setTextSize(sizeInSp) // optional
-                .allowQueue( allowQueue) // optional (prevents several Toastys from queuing)
+                .allowQueue(allowQueue) // optional (prevents several Toastys from queuing)
                 .apply(); // required
     }
 
@@ -63,6 +67,7 @@ public class FriendsActivity extends Activity {
         layoutInflater = LayoutInflater.from(this);
         remove = new Button(this);
         listView = findViewById(R.id.friends_list);
+        emptyView =findViewById(R.id.empty_listview_friends);
         popupInputDialogView = layoutInflater.inflate(R.layout.popup_input_dialog, null);
         final ArrayList<String> retrieved = new ArrayList<>(PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getStringSet("SAVEDATA", new HashSet<String>()));
 
@@ -73,31 +78,50 @@ public class FriendsActivity extends Activity {
         listView.setAdapter(adapter);
         listView.setClickable(true);
 
+        getDisplayMetrics();
+        listView.setEmptyView(emptyView);
+//        emptyView.setPadding(0,screenHeight/2-emptyView.getHeight(),0, 0);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                AlertDialog.Builder removeFriend = new AlertDialog.Builder(FriendsActivity.this);
-                removeFriend.setTitle("Remove this friend?");
-                removeFriend.setCancelable(false);
-                initPopupViewControls();
-                final AlertDialog removeFrend = removeFriend.create();
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        removeFrend.cancel();
-                    }
-                });
+                // Create a AlertDialog Builder.
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FriendsActivity.this);
+                // Set title, icon, can not cancel properties.
+                alertDialogBuilder.setTitle("Remove friend?");
+                alertDialogBuilder.setIcon(R.drawable.ic_launcher_background);
+                alertDialogBuilder.setCancelable(false);
+
+                // Init popup dialog view and it's ui controls.
+                initRemovePopupViewControls();
+
+                // Set the inflated layout view object to the AlertDialog builder.
+                alertDialogBuilder.setView(popupRemoveDialogView);
+
+                // Create AlertDialog and show.
+                final AlertDialog alertDialog = alertDialogBuilder.create();
+
+                // When user click the save button in the popup dialog.
                 remove.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
-                        int value = (int) adapter.getItem(position);
-                        retrieved.remove(value);
+                    public void onClick(View view) {
+                        retrieved.remove(position);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.activity_friends_listview, retrieved);
+                        listView.setAdapter(adapter);
+                        saveSharedPreferences(retrieved);
+                        alertDialog.cancel();
+                    }});
+                cancelRemove.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.cancel();
+//                        alertDialog.closeOptionsMenu();
                     }
                 });
-
-
+                alertDialog.show();
             }
         });
+
 
         setTheme(R.style.Theme_AppCompat);
 
@@ -160,6 +184,27 @@ public class FriendsActivity extends Activity {
                 alertDialog.show();
             }
         });
+    }
+
+    private void getDisplayMetrics() {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+ screenWidth = displayMetrics.widthPixels;
+        screenHeight = displayMetrics.heightPixels;
+    }
+
+
+    private void initRemovePopupViewControls() {
+        // Get layout inflater object.
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+
+        // Inflate the popup dialog from a layout xml file.
+        popupRemoveDialogView = layoutInflater.inflate(R.layout.popup_remove_friend, null);
+
+        // Get user input edittext and button ui controls in the popup dialog.
+        remove = popupRemoveDialogView.findViewById(R.id.remove_friend);
+        cancelRemove = popupRemoveDialogView.findViewById(R.id.cancel_remove);
+
     }
 
     public static int randomScore(int min, int max) {
