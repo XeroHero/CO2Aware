@@ -61,8 +61,8 @@ Button friendList;
         journeyPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(SplashScreen.this, JourneyPlannerItinerary.class));
-                APICaller.getJSONFromUrl();
+                startActivity(new Intent(SplashScreen.this, JourneyPlannerItinerary.class));
+//                APICaller.getJSONFromUrl();
             }
         });
 
