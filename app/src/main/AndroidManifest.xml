@@ -42,13 +42,17 @@
                 <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
         </activity>
-        <activity android:name=".TipsActivity" />
+        <activity android:name=".TipsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensorPortrait" />
         <activity android:name=".TransportPlanner" />
         <activity
             android:name=".JourneyPlannerItinerary"
-            android:label="@string/title_activity_journey_planner_itinerary" />
+            android:label="@string/title_activity_journey_planner_itinerary"
+            android:screenOrientation="sensorPortrait"/>
         <activity android:name=".AboutActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"/>
         <activity android:name=".FriendsActivity"
             android:screenOrientation="sensorPortrait"/>
     </application>
