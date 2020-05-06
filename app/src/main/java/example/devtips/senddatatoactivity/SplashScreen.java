@@ -23,7 +23,9 @@ public class SplashScreen extends AppCompatActivity {
     Button journeyPlan;
     Button greenTips;
 Button friendList;
-//    NB: Required to request permissions in advance. Else, crash on first opening of GMaps
+    private Button about;
+
+    //    NB: Required to request permissions in advance. Else, crash on first opening of GMaps
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -77,6 +79,14 @@ Button friendList;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SplashScreen.this, FriendsActivity.class));
+            }
+        });
+
+        about = findViewById(R.id.about_btn);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SplashScreen.this, AboutActivity.class));
             }
         });
     }
