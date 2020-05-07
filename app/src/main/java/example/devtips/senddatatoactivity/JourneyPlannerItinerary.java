@@ -13,9 +13,16 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static example.devtips.senddatatoactivity.JourneyPlannerItinerary.*;
 import static org.junit.Assert.assertThat;
@@ -23,6 +30,7 @@ import static org.junit.Assert.assertThat;
 public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     static GoogleMap mMap;
+    static String replace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,7 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
     }
 
@@ -178,15 +187,17 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
 //        mMap.setMaxZoomPreference(10);
         mMap.setMyLocationEnabled(true);
         defaultMapSettings(mMap);
-//        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-//            @Override
-//            public boolean onMarkerClick(Marker marker) {
-//                String title = marker.getTitle();
-//                String replace = title.replace("Bike Station ", " ");
-//                System.out.println("BIKE STN CLICKED: " + replace);
-//                return true;
-//            }
-//        });
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                String title = marker.getTitle();
+                replace = title.replace("Bike Station ", " ");
+                System.out.println("BIKE STN CLICKED: " + replace);
+                return true;
+            }
+        });
+
+
         Location myLocation = mMap.getMyLocation();
         if (myLocation != null) {
             LatLng myLocationLatLng = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());

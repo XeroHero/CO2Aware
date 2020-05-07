@@ -1,4 +1,4 @@
-package example.devtips.senddatatoactivity;
+package example.devtips.senddatatoactivity.unused;
 
 import android.content.Context;
 
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import example.devtips.senddatatoactivity.BikeStation;
+import example.devtips.senddatatoactivity.R;
 
 /**
  * Created by ankit on 27/10/17.
@@ -35,9 +38,9 @@ public class BikeStationAdapter extends RecyclerView.Adapter<BikeStationAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         BikeStation movie = list.get(position);
 
-        holder.textTitle.setText(movie.getAddress());
-        holder.textRating.setText(String.valueOf(movie.getBikesAvailable()));
-        holder.textYear.setText(String.valueOf(movie.getParkingAvailable()));
+//        holder.textTitle.setText(movie.getAddress());
+//        holder.textRating.setText(String.valueOf(movie.getBikesAvailable()));
+//        holder.textYear.setText(String.valueOf(movie.getParkingAvailable()));
 
     }
 

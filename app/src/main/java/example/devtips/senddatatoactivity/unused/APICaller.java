@@ -1,4 +1,4 @@
-package example.devtips.senddatatoactivity;
+package example.devtips.senddatatoactivity.unused;
 
 import android.util.Log;
 
