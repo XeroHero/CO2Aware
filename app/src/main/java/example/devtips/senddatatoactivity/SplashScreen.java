@@ -77,6 +77,7 @@ Button friendList;
             public void onClick(View view) {
                 startActivity(new Intent(SplashScreen.this, JourneyPlannerItinerary.class));
 //                APICaller.getJSONFromUrl();
+//                JSONFetch.jsonRequest();
             }
         });
 
