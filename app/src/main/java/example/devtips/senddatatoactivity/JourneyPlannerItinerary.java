@@ -3,6 +3,7 @@ package example.devtips.senddatatoactivity;
 import android.Manifest;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -42,7 +43,7 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        assert mapFragment != null;
+//        assert mapFragment != null;
         mapFragment.getMapAsync(this);
     }
 
@@ -66,19 +67,18 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         // Add a marker in Sydney and move the camera
         LatLng dublinGeneric = new LatLng(-53, 6);
 
-
         placeMarkers(dublinGeneric, mMap);
     }
 
     private static void placeMarkers(LatLng dublinGeneric, GoogleMap mMap) {
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker2).title("Bike Station 2 - Blessington Street"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker3).title("Bike Station 3 - Bolton Street"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker4).title("Bike Station 4 - "+"Greek Street"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker5).title("Bike Station 5 - "+"Charlemont Street"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker6).title("Bike Station 6 - Chirstchurch Place"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker7).title("Bike Station 7 - "+"High Street"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker8).title("Bike Station 8 - "+"Custom House Quay"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker9).title("Bike Station 9 - "+"Exchequer Street"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker2).title("Bike Station 2  - Blessington Street"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker3).title("Bike Station 3  - Bolton Street"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker4).title("Bike Station 4  - "+"Greek Street"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker5).title("Bike Station 5  - "+"Charlemont Street"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker6).title("Bike Station 6  - Chirstchurch Place"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker7).title("Bike Station 7  - "+"High Street"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker8).title("Bike Station 8  - "+"Custom House Quay"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker9).title("Bike Station 9  - "+"Exchequer Street"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker10).title("Bike Station 10 - Dame Street"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker11).title("Bike Station 11 - " +"Earlsfort Terrace"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker12).title("Bike Station 12 - Eccles Street"));
@@ -93,7 +93,7 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker23).title("Bike Station 23 - Custom House"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker24).title("Bike Station 24 - Cathal Brugha Street"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker25).title("Bike Station 25 - "+"Merrion Square East"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker26).title("Bike Station  - Merrion Square West"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker26).title("Bike Station 26 - Merrion Square West"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker27).title("Bike Station 27 - "+"Molesworth Street"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker28).title("Bike Station 28 - Mountjoy Square West"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker29).title("Bike Station 29 - Ormond Quay Upper"));
@@ -156,7 +156,7 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker90).title("Bike Station 90 - " + "Benson Street"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker91).title("Bike Station 91 - "+"South Dock Road"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker92).title("Bike Station 92 - Heuston Bridge (North)"));
-        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker93).title("Bike Station  - Heuston Station (Central)"));
+        mMap.addMarker(new MarkerOptions().position(BikeConstants.marker93).title("Bike Station 93 - Heuston Station (Central)"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker94).title("Bike Station 94 - "+"Heuston Station (Car Park)"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker95).title("Bike Station 95 - "+"Royal Hospital"));
         mMap.addMarker(new MarkerOptions().position(BikeConstants.marker96).title("Bike Station 96 - Kilmainham Lane"));
@@ -192,7 +192,8 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
             public boolean onMarkerClick(Marker marker) {
                 String title = marker.getTitle();
                 replace = title.replace("Bike Station ", " ");
-                System.out.println("BIKE STN CLICKED: " + replace);
+//                replace.split("-");
+                Log.d("Bike station tapped", replace.substring(0, 4).replace(" ", ""));
                 return true;
             }
         });
