@@ -51,7 +51,7 @@ public class SplashScreenTest {
     }
     @Test
     public void testAboutButton_isShown() {
-        View aboutButton = mSplashScreen.findViewById(R.id.about);
+        View aboutButton = mSplashScreen.findViewById(R.id.about_btn);
         assertNotNull(aboutButton);
     }
 
