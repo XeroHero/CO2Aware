@@ -13,7 +13,7 @@ public class TipsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_green_tips);
 
 
         setTitle(R.string.green_tips_title);

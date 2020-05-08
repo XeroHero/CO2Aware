@@ -25,4 +25,12 @@
     <string name="destination">Destination</string>
     <string name="search">Search!</string>
     <string name="choose_destination_subtitle">Enter your destination and origin points. The app will try to find routes for you.</string>
+    <string name="walk_btn_text">Walk!</string>
+    <string name="bike_btn_text">Cycle!</string>
+    <string name="drive_btn_text">Drive!</string>
+    <string name="bus_btn_text">Bus!</string>
+    <string name="journey_planner_btn_text">Plan a Journey!</string>
+    <string name="green_tips_btn_text">Green Tips!</string>
+    <string name="friends_btn_text">Friends!</string>
+    <string name="about_app_btn_text">About the App</string>
 </resources>
