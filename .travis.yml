@@ -69,8 +69,8 @@ after_success:
 
 deploy:
   provider: releases
-  user: XeroHero
-  password: lollb1998
+  api_key:
+    secure: "8860c6f1fde902db3f9821a0a0cd2a06d380a2ec"
   file: CO2Aware.apk
   skip_cleanup: true
   on:
