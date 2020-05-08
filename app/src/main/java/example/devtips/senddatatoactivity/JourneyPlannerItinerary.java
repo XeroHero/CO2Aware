@@ -45,6 +45,11 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
                 .findFragmentById(R.id.map);
 //        assert mapFragment != null;
         mapFragment.getMapAsync(this);
+
+        Log.i("ORIG-R", ChooseDestinationActivity.origin);
+        Log.i("DEST-R", ChooseDestinationActivity.destination);
+        Log.i("TYPE-R", ChooseDestinationActivity.transportType);
+
     }
 
 
@@ -193,7 +198,9 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
                 String title = marker.getTitle();
                 replace = title.replace("Bike Station ", " ");
 //                replace.split("-");
-                Log.d("Bike station tapped", replace.substring(0, 4).replace(" ", ""));
+                int bikeStationId  = Integer.parseInt(replace.substring(0, 4)
+                        .replace(" ", ""));
+                Log.d("Bike station tapped", String.valueOf(bikeStationId)); //bikeStationId is the number parameter of each bikestation in JSON
                 return true;
             }
         });
@@ -201,9 +208,11 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
 
         Location myLocation = mMap.getMyLocation();
         if (myLocation != null) {
-            LatLng myLocationLatLng = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+            LatLng myLocationLatLng = new LatLng(myLocation.getLatitude(),
+                    myLocation.getLongitude());
 
-            mMap.addMarker(new MarkerOptions().position(myLocationLatLng).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(myLocationLatLng)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         }
     }
 

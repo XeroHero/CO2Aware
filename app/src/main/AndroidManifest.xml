@@ -13,11 +13,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_round"
-        android:screenOrientation="sensorPortrait"
         android:label="CO2 Aware"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ChooseDestinationActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -36,19 +37,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TipsActivity"
+        <activity
+            android:name=".TipsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensorPortrait" />
         <activity android:name=".TransportPlanner" />
         <activity
             android:name=".JourneyPlannerItinerary"
             android:label="@string/title_activity_journey_planner_itinerary"
-            android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".AboutActivity"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".FriendsActivity"
-            android:screenOrientation="sensorPortrait"/>
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".AboutActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FriendsActivity"
+            android:screenOrientation="sensorPortrait" />
     </application>
 
 </manifest>
