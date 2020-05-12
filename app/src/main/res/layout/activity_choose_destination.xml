@@ -30,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18dp"
+            android:textAlignment="center"
             android:hint="@string/origin"
             android:layout_below="@id/origin_label"
             android:id="@+id/origin_textbox"/>
@@ -41,7 +42,8 @@
             android:textAlignment="center"
             android:textSize="20dp"
             android:layout_below="@id/origin_textbox"
-            android:id="@+id/destination_label"/>
+            android:id="@+id/destination_label"
+            android:paddingTop="30dp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -56,7 +58,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Transport Type"
-        android:textSize="20dp"
+        android:textSize="22dp"
+        android:textAlignment="center"
+        android:paddingTop="30dp"
         android:layout_below="@id/destination_textbox"
         android:id="@+id/transport_type_textview"/>
 <LinearLayout
