@@ -25,6 +25,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import example.devtips.senddatatoactivity.unused.APICaller;
+
 import static example.devtips.senddatatoactivity.JourneyPlannerItinerary.*;
 import static org.junit.Assert.assertThat;
 
@@ -73,6 +75,9 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         LatLng dublinGeneric = new LatLng(-53, 6);
 
         placeMarkers(dublinGeneric, mMap);
+
+        APICaller apiCaller = new APICaller();
+        apiCaller.getRetrofitArray();
     }
 
     private static void placeMarkers(LatLng dublinGeneric, GoogleMap mMap) {

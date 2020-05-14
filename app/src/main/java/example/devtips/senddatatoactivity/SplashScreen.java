@@ -26,6 +26,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import example.devtips.senddatatoactivity.unused.APICaller;
+
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 /**
@@ -76,8 +78,8 @@ Button friendList;
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SplashScreen.this, ChooseDestinationActivity.class));
-//                APICaller.getJSONFromUrl();
-//                JSONFetch.jsonRequest();
+                APICaller apiCaller = new APICaller();
+                apiCaller.getRetrofitArray();
             }
         });
 
