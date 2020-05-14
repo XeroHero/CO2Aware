@@ -82,12 +82,6 @@ public class ChooseDestinationActivity extends AppCompatActivity {
         searchItineraryDatabase.setOnClickListener(v -> {
             destination = destinationTextbox.getText().toString();
             origin = originTextbox.getText().toString();
-
-
-            Log.d("TYPE", transportType);
-
-            Log.d("ORIG", origin);
-            Log.d("DEST", destination);
             startActivity(new Intent(ChooseDestinationActivity.this, JourneyPlannerItinerary.class));
         });
     }
