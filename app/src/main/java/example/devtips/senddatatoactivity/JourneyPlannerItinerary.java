@@ -18,19 +18,19 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.maps.DirectionsApi;
 import com.google.maps.DirectionsApiRequest;
 import com.google.maps.GeoApiContext;
-import com.google.maps.PendingResult;
-import com.google.maps.android.clustering.ClusterManager;
-import com.google.maps.model.DirectionsResult;
-import com.google.maps.model.DirectionsRoute;
 import com.google.maps.model.TravelMode;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
+import example.devtips.senddatatoactivity.helpers.FetchURL;
+import example.devtips.senddatatoactivity.helpers.TaskLoadedCallback;
 import example.devtips.senddatatoactivity.models.BikeStation;
 import example.devtips.senddatatoactivity.network.GetDataService;
 import example.devtips.senddatatoactivity.network.RetrofitClientInstance;
@@ -38,11 +38,43 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback {
+import static android.graphics.Color.GREEN;
+
+public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback, TaskLoadedCallback {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     static GoogleMap mMap;
     static String replace;
-    ClusterManager<? extends com.google.maps.android.clustering.ClusterItem> mClusterManager;
+    MarkerOptions origin, destination;
+    Polyline currentPolyline;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                MY_PERMISSIONS_REQUEST_LOCATION);
+        setContentView(R.layout.activity_journey_planner_itinerary);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        assert mapFragment != null;
+        mapFragment.getMapAsync(this);
+        origin = new MarkerOptions().position(getLocationFromAddress(this, ChooseDestinationActivity.origin)).title("A");
+        destination = new MarkerOptions().position(getLocationFromAddress(this, ChooseDestinationActivity.destination)).title("B");
+
+        String url = getUrl(origin.getPosition(), destination.getPosition(), ChooseDestinationActivity.transportType);
+        new FetchURL(this).execute(url, ChooseDestinationActivity.transportType);
+    }
+
+    private String getUrl(LatLng origin, LatLng destination, String transportType) {
+        String originStr = "origin=" + origin.latitude + "," + origin.longitude;
+        String destStr = "destination=" + destination.latitude + "," + destination.longitude;
+        String mode = "mode=" + transportType;
+
+        String params = originStr + "&" + destStr + "&" + mode;
+        String output = "json";
+
+        return "https://maps.googelapis.com/maps/api/directions/" + output + "?" + params + "&key=" + getString(R.string.google_maps_key);
+    }
+
     public LatLng getLocationFromAddress(Context context, String strAddress) {
 
         Geocoder coder = new Geocoder(context);
@@ -57,7 +89,7 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
             }
 
             Address location = address.get(0);
-            p1 = new LatLng(location.getLatitude(), location.getLongitude() );
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
 
         } catch (IOException ex) {
 
@@ -66,9 +98,9 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
 
         return p1;
     }
-    String destination = ChooseDestinationActivity.destination;
+//
 
-    private void queryDirections(){
+    private void queryDirections() {
         GeoApiContext context = new GeoApiContext().setApiKey("YOUR_API_KEY");
         String destination = ChooseDestinationActivity.destination;
 
@@ -80,24 +112,24 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         DirectionsApiRequest apiRequest = DirectionsApi.newRequest(context);
         apiRequest.origin(new com.google.maps.model.LatLng(originLatLng.latitude, originLatLng.longitude));
         apiRequest.destination(new com.google.maps.model.LatLng(destLatLng.latitude, destLatLng.longitude));
-
-        switch(ChooseDestinationActivity.transportType){
-            case "bicycling":
-                apiRequest.mode(TravelMode.BICYCLING); //set travelling mode
-                break;
-            case "driving":
-                apiRequest.mode(TravelMode.DRIVING); //set travelling mode driving
-                break;
-            case "walking":
-                apiRequest.mode(TravelMode.WALKING); //set travelling mode walking
-                break;
-            case "transit":
-                apiRequest.mode(TravelMode.TRANSIT); //set travelling mode transit
-                break;
-            case "default":
-                apiRequest.mode(TravelMode.UNKNOWN); //generic unknown travel mode
-
-        }
+        apiRequest.mode(TravelMode.DRIVING); //set travelling mode driving
+//        switch (ChooseDestinationActivity.transportType) {
+//            case "bicycling":
+//                apiRequest.mode(TravelMode.BICYCLING); //set travelling mode
+//                break;
+//            case "driving":
+//                apiRequest.mode(TravelMode.DRIVING); //set travelling mode driving
+//                break;
+//            case "walking":
+//                apiRequest.mode(TravelMode.WALKING); //set travelling mode walking
+//                break;
+//            case "transit":
+//                apiRequest.mode(TravelMode.TRANSIT); //set travelling mode transit
+//                break;
+//            case "default":
+//                apiRequest.mode(TravelMode.UNKNOWN); //generic unknown travel mode
+//
+//        }
 
 //        apiRequest.mode(TravelMode.DRIVING); //set travelling mode
 
@@ -117,36 +149,6 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
 //
 //            }
 //        });
-    }
-
-    //    public void getDirection(LatLng start, LatLng end, LatLng bS1, LatLng bS2){
-//        start = new LatLng(18.015365, -77.499382);
-////        waypoint= new LatLng(18.01455, -77.499333);
-//        end = new LatLng(18.012590, -77.500659);
-//
-//        Routing routing = new Routing.Builder()
-//                .travelMode(Routing.TravelMode.WALKING)
-//                .withListener(this)
-//                .waypoints(start, bS1, bS2, end)
-//                .build();
-//        routing.execute();
-//
-//        @Override
-//        public void onRoutingSuccess(ArrayList<Route> route, int shortestRouteIndex)
-//        {
-//            //code to add route to map here. See sample app for more details.
-//        }
-//    }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ActivityCompat.requestPermissions(this,
-                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                MY_PERMISSIONS_REQUEST_LOCATION);
-        setContentView(R.layout.activity_journey_planner_itinerary);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        assert mapFragment != null;
-        mapFragment.getMapAsync(this);
     }
 
 
@@ -209,6 +211,8 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
     }
 
     public void addMarkerInMap(GoogleMap mMap, List<BikeStation> bikeStations) {
+        mMap.addMarker(destination);
+        mMap.addMarker(origin);
         for (BikeStation bikeStation : bikeStations) {
             Double lat = bikeStation.getPosition().getLatitude();
             Double lng = bikeStation.getPosition().getLongitude();
@@ -241,6 +245,12 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(53.3498091, -6.2602548), 12.17F)); //center on Spire, zoom level 12.17F OK
     }
 
+    @Override
+    public void onTaskDone(Object... values) {
+        if (currentPolyline != null)
+            currentPolyline.remove();
+        currentPolyline=mMap.addPolyline((PolylineOptions) values[0]);
+    }
 }
 
 

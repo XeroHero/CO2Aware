@@ -22,6 +22,7 @@ import example.devtips.senddatatoactivity.models.Location;
 
 public class APICaller {
 
+
     private static JSONObject jObj = null;
     private static String json = "";
 
