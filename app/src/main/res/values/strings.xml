@@ -20,7 +20,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="success_email_toasty">\"An email confirmation will be sent to \"</string>
-    <string name="empty_listview_text">It\'s kind of lonely here. Why not add some friends? Hit that bright button there at the bottom and see for yourself how fun it is to reduce emissions together with your friends!</string>
+    <string name="empty_listview_text">It\'s kind of lonely here. Why not add some friends? Hit that button there at the bottom to add your friends now!💪</string>
     <string name="origin">Origin</string>
     <string name="destination">Destination</string>
     <string name="search">Search!</string>

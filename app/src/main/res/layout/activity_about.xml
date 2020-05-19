@@ -15,12 +15,52 @@
         android:textAlignment="center"
         android:textSize="40dp" />
 
-    <TextView
-        android:id="@+id/about_subtitle_medium"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/about_title_large"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textSize="26dp" />
+        android:layout_height="match_parent"
+        android:paddingTop="75dp"
+        android:paddingBottom="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/about_subtitle_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="26dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/material_ui"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/android_logo"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/android_studio"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ucd_logo"
+                    tools:ignore="Suspicious0dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

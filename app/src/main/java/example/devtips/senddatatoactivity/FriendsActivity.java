@@ -86,20 +86,20 @@ public class FriendsActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 // Create a AlertDialog Builder.
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FriendsActivity.this);
+                AlertDialog.Builder removeFriendsPopUp = new AlertDialog.Builder(FriendsActivity.this);
                 // Set title, icon, can not cancel properties.
-                alertDialogBuilder.setTitle("Remove friend?");
-                alertDialogBuilder.setIcon(R.drawable.ic_launcher_background);
-                alertDialogBuilder.setCancelable(false);
+                removeFriendsPopUp.setTitle("Remove friend?");
+                removeFriendsPopUp.setIcon(R.drawable.friends);
+                removeFriendsPopUp.setCancelable(false);
 
                 // Init popup dialog view and it's ui controls.
                 initRemovePopupViewControls();
 
                 // Set the inflated layout view object to the AlertDialog builder.
-                alertDialogBuilder.setView(popupRemoveDialogView);
+                removeFriendsPopUp.setView(popupRemoveDialogView);
 
                 // Create AlertDialog and show.
-                final AlertDialog alertDialog = alertDialogBuilder.create();
+                final AlertDialog alertDialog = removeFriendsPopUp.create();
 
                 // When user click the save button in the popup dialog.
                 remove.setOnClickListener(new View.OnClickListener() {
@@ -131,20 +131,20 @@ public class FriendsActivity extends Activity {
             public void onClick(View view) {
 
                 // Create a AlertDialog Builder.
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(FriendsActivity.this);
+                AlertDialog.Builder addFriendsPopUp = new AlertDialog.Builder(FriendsActivity.this);
                 // Set title, icon, can not cancel properties.
-                alertDialogBuilder.setTitle("Add or invite a friend");
-                alertDialogBuilder.setIcon(R.drawable.ic_launcher_background);
-                alertDialogBuilder.setCancelable(false);
+                addFriendsPopUp.setTitle("Add or invite a friend");
+                addFriendsPopUp.setIcon(R.drawable.friends);
+                addFriendsPopUp.setCancelable(false);
 
                 // Init popup dialog view and it's ui controls.
                 initPopupViewControls();
 
                 // Set the inflated layout view object to the AlertDialog builder.
-                alertDialogBuilder.setView(popupInputDialogView);
+                addFriendsPopUp.setView(popupInputDialogView);
 
                 // Create AlertDialog and show.
-                final AlertDialog alertDialog = alertDialogBuilder.create();
+                final AlertDialog alertDialog = addFriendsPopUp.create();
 
                 // When user click the save button in the popup dialog.
                 save.setOnClickListener(new View.OnClickListener() {
