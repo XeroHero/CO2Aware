@@ -34,4 +34,8 @@
     <string name="friends_btn_text">Friends!</string>
     <string name="about_app_btn_text">About the App</string>
     <string name="view_available_bike_stations">View Available Bike Stations</string>
+    <string name="try_again_transport_empty">\"Please select a transport type using \"</string>
+    <string name="try_again_transport_2">one of the buttons above and try again.</string>
+    <string name="try_again_desstination_empty">Please enter a destination above</string>
+    <string name="try_again_source">Please enter an origin point</string>
 </resources>
