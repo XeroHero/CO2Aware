@@ -29,8 +29,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
-import example.devtips.senddatatoactivity.helpers.FetchURL;
-import example.devtips.senddatatoactivity.helpers.TaskLoadedCallback;
 import example.devtips.senddatatoactivity.models.BikeStation;
 import example.devtips.senddatatoactivity.network.GetDataService;
 import example.devtips.senddatatoactivity.network.RetrofitClientInstance;
@@ -40,12 +38,12 @@ import retrofit2.Response;
 
 import static android.graphics.Color.GREEN;
 
-public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback, TaskLoadedCallback {
+public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     static GoogleMap mMap;
     static String replace;
-    MarkerOptions origin, destination;
-    Polyline currentPolyline;
+//    MarkerOptions origin, destination;
+//    Polyline currentPolyline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +55,11 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
-        origin = new MarkerOptions().position(getLocationFromAddress(this, ChooseDestinationActivity.origin)).title("A");
-        destination = new MarkerOptions().position(getLocationFromAddress(this, ChooseDestinationActivity.destination)).title("B");
-
-        String url = getUrl(origin.getPosition(), destination.getPosition(), ChooseDestinationActivity.transportType);
-        new FetchURL(this).execute(url, ChooseDestinationActivity.transportType);
+//        origin = new MarkerOptions().position(getLocationFromAddress(this, ChooseDestinationActivity.origin)).title("A");
+//        destination = new MarkerOptions().position(getLocationFromAddress(this, ChooseDestinationActivity.destination)).title("B");
+//
+//        String url = getUrl(origin.getPosition(), destination.getPosition(), ChooseDestinationActivity.transportType);
+//        new FetchURL(this).execute(url, ChooseDestinationActivity.transportType);
     }
 
     private String getUrl(LatLng origin, LatLng destination, String transportType) {
@@ -211,8 +209,8 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
     }
 
     public void addMarkerInMap(GoogleMap mMap, List<BikeStation> bikeStations) {
-        mMap.addMarker(destination);
-        mMap.addMarker(origin);
+//        mMap.addMarker(destination);
+//        mMap.addMarker(origin);
         for (BikeStation bikeStation : bikeStations) {
             Double lat = bikeStation.getPosition().getLatitude();
             Double lng = bikeStation.getPosition().getLongitude();
@@ -245,12 +243,12 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(53.3498091, -6.2602548), 12.17F)); //center on Spire, zoom level 12.17F OK
     }
 
-    @Override
-    public void onTaskDone(Object... values) {
-        if (currentPolyline != null)
-            currentPolyline.remove();
-        currentPolyline=mMap.addPolyline((PolylineOptions) values[0]);
-    }
+//    @Override
+//    public void onTaskDone(Object... values) {
+//        if (currentPolyline != null)
+//            currentPolyline.remove();
+//        currentPolyline=mMap.addPolyline((PolylineOptions) values[0]);
+//    }
 }
 
 
