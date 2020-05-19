@@ -43,7 +43,7 @@
             android:screenOrientation="sensorPortrait" />
         <activity android:name=".TransportPlanner" />
         <activity
-            android:name=".JourneyPlannerItinerary"
+            android:name=".BikeStationBrowser"
             android:label="@string/title_activity_journey_planner_itinerary"
             android:screenOrientation="sensorPortrait" />
         <activity

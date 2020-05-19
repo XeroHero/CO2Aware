@@ -2,29 +2,28 @@ package example.devtips.senddatatoactivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//import info.hoang8f.widget.FButton;
-
 public class ChooseDestinationActivity extends AppCompatActivity {
     static String origin;
     static String destination;
     static String transportType;
     Button bus, walk, drive, bike;
+//    Button bikeStations, searchGMaps;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_destination);
-
         //TODO ensure these two are filled
         EditText originTextbox = findViewById(R.id.origin_textbox);
         EditText destinationTextbox = findViewById(R.id.destination_textbox);
@@ -80,11 +79,32 @@ public class ChooseDestinationActivity extends AppCompatActivity {
             return true;
         });
 
-        Button searchItineraryDatabase = findViewById(R.id.search_button);
-        searchItineraryDatabase.setOnClickListener(v -> {
-            destination = destinationTextbox.getText().toString();
-            origin = originTextbox.getText().toString();
-            startActivity(new Intent(ChooseDestinationActivity.this, JourneyPlannerItinerary.class));
+        Button bikeStationBrowser = findViewById(R.id.search_button);
+        bikeStationBrowser.setOnClickListener(v -> {
+            startActivity(new Intent(ChooseDestinationActivity.this, BikeStationBrowser.class));
+        });
+
+        Button viewItineraries = findViewById(R.id.view_itineraries_button);
+        viewItineraries.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { String source = originTextbox.getText().toString();
+                String destination = destinationTextbox.getText().toString();
+
+                if (TextUtils.isEmpty(source)) {
+                    originTextbox.setError("Enter Soruce point");
+                } else if (TextUtils.isEmpty(destination)) {
+                    destinationTextbox.setError("Enter Destination Point");
+                } else {
+                    String sendstring="http://maps.google.com/maps?saddr=" +
+                            source +
+                            "&daddr=" +
+                            destination;
+                    Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                            Uri.parse(sendstring));
+                    startActivity(intent);
+                }
+            }
+
         });
     }
 }

@@ -18,8 +18,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.maps.DirectionsApi;
 import com.google.maps.DirectionsApiRequest;
 import com.google.maps.GeoApiContext;
@@ -36,9 +34,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static android.graphics.Color.GREEN;
-
-public class JourneyPlannerItinerary extends FragmentActivity implements OnMapReadyCallback {
+public class BikeStationBrowser extends FragmentActivity implements OnMapReadyCallback {
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     static GoogleMap mMap;
     static String replace;
@@ -180,7 +176,7 @@ public class JourneyPlannerItinerary extends FragmentActivity implements OnMapRe
 
             @Override
             public void onFailure(@NonNull Call<List<BikeStation>> call, @NonNull Throwable t) {
-                Toast.makeText(JourneyPlannerItinerary.this.getApplicationContext(), "Error contacting API", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BikeStationBrowser.this.getApplicationContext(), "Error contacting API", Toast.LENGTH_SHORT).show();
             }
         });
         mMap.moveCamera(CameraUpdateFactory.newLatLng(dublinGeneric)); //set map to initially show a view of the entire city

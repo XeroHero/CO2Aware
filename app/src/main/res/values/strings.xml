@@ -33,4 +33,5 @@
     <string name="green_tips_btn_text">Green Tips!</string>
     <string name="friends_btn_text">Friends!</string>
     <string name="about_app_btn_text">About the App</string>
+    <string name="view_available_bike_stations">View Available Bike Stations</string>
 </resources>
