@@ -41,7 +41,7 @@ public class ChooseDestinationActivity extends AppCompatActivity {
 
         bike.setOnTouchListener((v, event) -> {
             bike.setPressed(true);
-            transportType = "bicycling";
+            transportType = "b";
             drive.setPressed(false);
             bus.setPressed(false);
             walk.setPressed(false);
@@ -51,7 +51,7 @@ public class ChooseDestinationActivity extends AppCompatActivity {
 
         drive.setOnTouchListener((v, event) -> {
             drive.setPressed(true);
-            transportType = "driving";
+            transportType = "d";
             bike.setPressed(false);
             bus.setPressed(false);
             walk.setPressed(false);
@@ -61,7 +61,7 @@ public class ChooseDestinationActivity extends AppCompatActivity {
 
         bus.setOnTouchListener((v, event) -> {
             bus.setPressed(true);
-            transportType = "transit";
+            transportType = "r";
             drive.setPressed(false);
             bike.setPressed(false);
             walk.setPressed(false);
@@ -71,7 +71,7 @@ public class ChooseDestinationActivity extends AppCompatActivity {
 
         walk.setOnTouchListener((v, event) -> {
             walk.setPressed(true);
-            transportType = "walking";
+            transportType = "w";
             drive.setPressed(false);
             bus.setPressed(false);
             bike.setPressed(false);
@@ -98,7 +98,9 @@ public class ChooseDestinationActivity extends AppCompatActivity {
                     String sendstring="http://maps.google.com/maps?saddr=" +
                             source +
                             "&daddr=" +
-                            destination;
+                            destination +
+                            "&dirflg=" +
+                            transportType;
                     Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
                             Uri.parse(sendstring));
                     startActivity(intent);
