@@ -182,15 +182,15 @@ public class BikeStationBrowser extends FragmentActivity implements OnMapReadyCa
         mMap.moveCamera(CameraUpdateFactory.newLatLng(dublinGeneric)); //set map to initially show a view of the entire city
         mMap.setMyLocationEnabled(true);
         defaultMapSettings(mMap);
-        mMap.setOnMarkerClickListener(marker -> {
-            String title = marker.getTitle();
-            replace = title.replace("Bike Station ", " ");
-            int bikeStationId = Integer.parseInt(replace.substring(0, 4)
-                    .replace(" ", ""));
-            Log.d("Bike station tapped", String.valueOf(bikeStationId)); //bikeStationId is the number parameter of each bikestation in JSON
-
-            return true;
-        });
+//        mMap.setOnMarkerClickListener(marker -> {
+//            String title = marker.getTitle();
+//            replace = title.replace("Bike Station ", " ");
+//            int bikeStationId = Integer.parseInt(replace.substring(0, 4)
+//                    .replace(" ", ""));
+//            Log.d("Bike station tapped", String.valueOf(bikeStationId)); //bikeStationId is the number parameter of each bikestation in JSON
+//
+//            return true;
+//        });
 
 // Implemented through the Maps Geolocation Framework
 //        Location myLocation = mMap.getMyLocation();

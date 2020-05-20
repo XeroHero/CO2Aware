@@ -12,9 +12,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/friends"
         android:label="CO2 Aware"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/friends"
         android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
