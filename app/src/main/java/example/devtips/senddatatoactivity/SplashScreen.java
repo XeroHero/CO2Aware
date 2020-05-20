@@ -34,10 +34,10 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
  */
 public class SplashScreen extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_FOR_LOCATION = 1;
-    Button journeyPlan;
-    Button greenTips;
-    Button friendList;
-    private Button about;
+    public static Button journeyPlan;
+    public static Button greenTips;
+    public static Button friendList;
+    public static Button about;
 
     //    NB: Required to request permissions in advance. Else, crash on first opening of GMaps
     @Override
