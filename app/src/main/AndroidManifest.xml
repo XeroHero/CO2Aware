@@ -13,7 +13,7 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/friends"
-        android:label="CO2 Aware"
+        android:label="DublinBikes"
         android:roundIcon="@drawable/friends"
         android:screenOrientation="sensorPortrait"
         android:supportsRtl="true"
@@ -27,7 +27,7 @@
         <activity
             android:name=".SplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="CO2 Aware"
+            android:label="DublinBikes"
             android:screenOrientation="sensorPortrait"
             android:theme="@style/FullscreenTheme"
             tools:ignore="LockedOrientationActivity">

@@ -56,14 +56,6 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="70dp"
-                android:id="@+id/friends_btn"
-                android:text="@string/friends_btn_text"/>
-
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="70dp"
                 android:id="@+id/about_btn"
                 android:text="@string/about_app_btn_text"/>
         </LinearLayout>

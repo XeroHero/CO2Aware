@@ -19,7 +19,8 @@ public class AboutActivity extends AppCompatActivity {
         aboutTitle = findViewById(R.id.about_title_large);
         aboutTitle.setText("About the App");
         aboutText = findViewById(R.id.about_subtitle_medium);
-        aboutText.setText("This is my UCD Final Year Project submission for the Completion of my BSc Computer Science degree.\n\n" +
+        aboutText.setText("NB: This app does not use any personal data for purposes other than to locate your position and display nearby bike stations.\n\n" +
+                "This is my UCD Final Year Project submission for the Completion of my BSc Computer Science degree.\n\n" +
                 " It uses many open-source libraries, such as the Gson library to hadnle the JSON retrieved from the " +
                 "JCDecaux API dynamically each time.\n\n" +
                 "All graphics used in this application are royalty-free open graphics from flaticon.com and freeiconspng.com.\n\n" +

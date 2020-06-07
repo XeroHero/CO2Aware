@@ -77,8 +77,8 @@ public class SplashScreen extends AppCompatActivity {
         greenTips = findViewById(R.id.green_tips_btn);
         greenTips.setOnClickListener(view -> startActivity(new Intent(SplashScreen.this, TipsActivity.class)));
 
-        friendList = findViewById(R.id.friends_btn);
-        friendList.setOnClickListener(v -> startActivity(new Intent(SplashScreen.this, FriendsActivity.class)));
+//        friendList = findViewById(R.id.friends_btn);
+//        friendList.setOnClickListener(v -> startActivity(new Intent(SplashScreen.this, FriendsActivity.class)));
 
         about = findViewById(R.id.about_btn);
         about.setOnClickListener(v -> startActivity(new Intent(SplashScreen.this, AboutActivity.class)));
