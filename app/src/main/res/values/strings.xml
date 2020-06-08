@@ -21,7 +21,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="success_email_toasty">\"An email confirmation will be sent to \"</string>
     <string name="empty_listview_text">It\'s kind of lonely here. Why not add some friends? Hit that button there at the bottom to add your friends now!💪</string>
-    <string name="origin">Origin</string>
+    <string name="origin">Origin (Default is your location)</string>
     <string name="destination">Destination</string>
     <string name="search">Search!</string>
     <string name="choose_destination_subtitle">Enter your destination and origin points. The app will try to find routes for you.</string>
@@ -38,4 +38,5 @@
     <string name="try_again_transport_2">one of the buttons above and try again.</string>
     <string name="try_again_desstination_empty">Please enter a destination above</string>
     <string name="try_again_source">Please enter an origin point</string>
+    <string name="about_app_title">About the App</string>
 </resources>

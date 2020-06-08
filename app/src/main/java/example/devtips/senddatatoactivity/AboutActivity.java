@@ -1,6 +1,7 @@
 package example.devtips.senddatatoactivity;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -11,13 +12,14 @@ public class AboutActivity extends AppCompatActivity {
     TextView aboutTitle;
     TextView aboutText;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
         aboutTitle = findViewById(R.id.about_title_large);
-        aboutTitle.setText("About the App");
+        aboutTitle.setText(R.string.about_app_title);
         aboutText = findViewById(R.id.about_subtitle_medium);
         aboutText.setText("NB: This app does not use any personal data for purposes other than to locate your position and display nearby bike stations.\n\n" +
                 "This is my UCD Final Year Project submission for the Completion of my BSc Computer Science degree.\n\n" +

@@ -25,9 +25,6 @@ import static example.devtips.senddatatoactivity.R.string.try_again_transport_em
 public class ChooseDestinationActivity extends AppCompatActivity {
     static String origin;
     static String destination;
-    static String transportType;
-    Button bus, walk, drive, bike;
-    private Button bikeStationBrowser, viewItineraries;
 
     @SuppressLint({"ClickableViewAccessibility", "CheckResult"})
     @Override
@@ -35,7 +32,7 @@ public class ChooseDestinationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_destination);
 
-        bikeStationBrowser = findViewById(R.id.view_itineraries_button);
+        Button bikeStationBrowser = findViewById(R.id.view_itineraries_button);
         bikeStationBrowser.setOnClickListener(v -> {
             startActivity(new Intent(ChooseDestinationActivity.this,
                     BikeStationBrowser.class));
@@ -45,7 +42,7 @@ public class ChooseDestinationActivity extends AppCompatActivity {
 
         EditText destinationTextbox = findViewById(R.id.destination_textbox);
 
-        viewItineraries = findViewById(R.id.search_button);
+        Button viewItineraries = findViewById(R.id.search_button);
         viewItineraries.setOnClickListener(v -> {
             origin = originTextbox.getText().toString();
             destination = destinationTextbox.getText().toString();
